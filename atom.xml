@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://firemakerwillow.github.io</id>
-    <title>Gridea</title>
-    <updated>2021-02-17T05:06:49.270Z</updated>
+    <title>工业区的后宅</title>
+    <updated>2021-02-17T05:25:41.756Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://firemakerwillow.github.io"/>
     <link rel="self" href="https://firemakerwillow.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>一代人终将老去，但总有人永远年轻</subtitle>
     <logo>https://firemakerwillow.github.io/images/avatar.png</logo>
     <icon>https://firemakerwillow.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Gridea</rights>
+    <rights>All rights reserved 2021, 工业区的后宅</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://firemakerwillow.github.io/post/hello-gridea/</id>
