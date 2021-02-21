@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>python c++ 对比教程 | 工业区的后宅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://firemakerwillow.github.io/favicon.ico?v=1613914959005">
+<link rel="stylesheet" href="https://firemakerwillow.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="前言
+这是博主的第一篇“技术”博客，浅显直白，试水之作，还望海涵。
+本教程提供学习python的一种思路，对比c++教程，看python的异同之处。如果先前已经学习过c++，那么这将是一种学习python的很自然的思路。
+一. hello ..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://firemakerwillow.github.io">
+        <img src="https://firemakerwillow.github.io/images/avatar.png?v=1613914959005" class="site-logo">
+        <h1 class="site-title">工业区的后宅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一代人终将老去，但总有人永远年轻
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://firemakerwillow.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">python c++ 对比教程</h2>
+            <div class="post-date">2021-02-21</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="前言">前言</h1>
+<p>这是博主的第一篇“技术”博客，浅显直白，试水之作，还望海涵。</p>
+<p>本教程提供学习python的一种思路，对比c++教程，看python的异同之处。如果先前已经学习过c++，那么这将是一种学习python的很自然的思路。</p>
+<h1 id="一-hello-world">一. hello world</h1>
+<pre><code class="language-c++"># include &lt;iostream&gt;
+using namespace std;
+int main()
+{
+  cout&lt;&lt;&quot;hello world&quot;;
+  return 0;
+}
+</code></pre>
+<pre><code class="language-python">print('hello world')
+</code></pre>
+<p>可以看到python的“hello world”程序较c++非常简单。这是因为c++是一门<mark>编译型语言</mark>，需要非常完整的程序结构，有主程序。而python是一门<mark>解释型语言</mark>，程序从上到下一句一句执行，不需要完整的程序结构。</p>
+<p>python的解释性使它不仅可以通过程序运行，还可以交互式运行，在terminal里输入python3，如果下载了ipython3，也可以输入ipython3，进入交互式使用界面。</p>
+<p>这里解释一下为什么是python3 ，因为python3 是python的全新版本，python创造者为了它的完美放弃了向下兼容，也就是说，python 中的部分程序是不能在最新的python3中运行的。</p>
+<h1 id="二-注释">二. 注释</h1>
+<pre><code class="language-c++">// 这是一个行注释
+/*这是一个块注释
+这是一个块注释
+这是一个块注释*/
+</code></pre>
+<pre><code class="language-python"># 这是一个行注释
+'''
+这是一个块注释
+这是一个块注释
+这是一个块注释
+'''
+</code></pre>
+<p>注释容易混淆</p>
+<h1 id="三-基本数据类型">三 .基本数据类型</h1>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+int main()
+{
+  int num = 0;
+  float numpoint = 1.2;
+  double numlongpoint = 6.9;
+  char character = 'a';
+  bool tof = true;
+  
+}
+</code></pre>
+<pre><code class="language-python">num = 0
+numpoint = 1.2
+character = 'a'
+tof = True
+</code></pre>
+<p>python 不需要指定数据类型。C++和python的变量机制似乎不同（此处我的理解很模糊）：c++是首先根据变量类型分配空间，然后在空间内赋值，python是首先有一个值，然后给这个值绑上一个标签。</p>
+<h1 id="四-高级数据类型">四. 高级数据类型</h1>
+<pre><code class="language-c++"># include&lt;iostream&gt;
+int main()
+{
+  // 枚举
+  enum color_set1 {red,blue,white,black};
+  // 枚举常量 red=0 blue=1  
+  color_set1 color1;
+  color1 = red;
+  color_set1 color2 = blue;
+}
+</code></pre>
+<p>枚举类型主要作用是提高代码可读性。</p>
+<pre><code class="language-c++"># include &lt;iostream&gt;
+int main()
+{
+  // 数组
+  int numset1[20];
+  char charaset2[30];
+  // 初始化数组
+  double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
+  char str1[] = &quot;hbibnjnl&quot;;
+}
+</code></pre>
+<p>数组必须在定义时确定大小</p>
+<pre><code class="language-c++"># include &lt;iostream&gt;
+# include &lt;cstring&gt;
+# include &lt;string&gt;
+using namespace std;
+int main()
+{
+  // cstring字符串
+  char str1[13] = &quot;runoob&quot;;// 共7位，最后一位为'\0'
+  char str2[13] = &quot;google&quot;;
+  char str3[13];
+  int  len ;
+  
+   // 复制 str1 到 str3
+  strcpy( str3, str1);
+  cout &lt;&lt; &quot;strcpy( str3, str1) : &quot; &lt;&lt; str3 &lt;&lt; endl;
+ 
+   // 连接 str1 和 str2
+  strcat( str1, str2);
+  cout &lt;&lt; &quot;strcat( str1, str2): &quot; &lt;&lt; str1 &lt;&lt; endl;
+ 
+   // 连接后，str1 的总长度
+  len = strlen(str1);
+  cout &lt;&lt; &quot;strlen(str1) : &quot; &lt;&lt; len &lt;&lt; endl;
+ 
+  // string 字符串
+  string str1 = &quot;runoob&quot;;
+  string str2 = &quot;google&quot;;
+  string str3;
+  int  len ;
+ 
+  // 复制 str1 到 str3
+  str3 = str1;
+  cout &lt;&lt; &quot;str3 : &quot; &lt;&lt; str3 &lt;&lt; endl;
+ 
+   // 连接 str1 和 str2
+  str3 = str1 + str2;
+  cout &lt;&lt; &quot;str1 + str2 : &quot; &lt;&lt; str3 &lt;&lt; endl;
+ 
+   // 连接后，str3 的总长度
+  len = str3.size();
+  cout &lt;&lt; &quot;str3.size() :  &quot; &lt;&lt; len &lt;&lt; endl;
+ 
+  
+  return 0;
+}
+
+
+</code></pre>
+<p>字符串有两种，cstring的字符串保留了更多的c的味道，string字符串更符合面向对象的设计思想，需要引用不同的库</p>
+<pre><code class="language-c++"># include &lt;iostream&gt;
+int main()
+{
+  //指针
+ 	char * str1;
+  str1 = new char [] = &quot;hello world&quot;;
+  delete str1;
+  int * num1;
+  int num2 = 3;
+  num1 = &amp; num2; //在指针表量中存储 num2 的地址
+ 	std::cout &lt;&lt; num1 &lt;&lt;endl; //输出 num2 的地址
+  std::cout &lt;&lt; *num1 &lt;&lt; endl; //输出num2的值 
+  num1 = NULL; // 设置空指针
+}
+</code></pre>
+<pre><code class="language-python"># 元组
+tuple1 = (1,4,1,&quot;2345&quot;,True)
+print(tuple1[2])
+a = tuple1.index(1)
+b = tuple1.count(1)
+</code></pre>
+<p>元组的特性是不可修改，常常用于函数传递多个参数使用</p>
+<pre><code class="language-python"># 列表
+list1 = ['red','blue','yelloow','white','black']
+print(list1)
+print (list1[-1])
+print (list1[0])
+'''
+列表支持的操作
+append 增加，在列表末尾加元素
+
+count 统计某一元素出现次数
+
+insert，插入元素
+
+reverse，列表反向
+
+clear，盲猜清除
+
+extend，在列表末尾一次性追加一个列表的值
+
+pop,移除队尾元素，并返回该元素的值
+
+sort 排序
+
+copy 暂时不清楚它的作用
+
+index，找到某值对应的第一个索引位置
+
+remove；移除第一个该元素
+'''
+
+</code></pre>
+<p>列表可以用不同类型的值，但一般都会用相同类型的值</p>
+<pre><code class="language-python"># 字典 
+# 由键值对构成，:前为键，:后为值
+# 键必须是数字，字符串，或元组
+dic = {
+  'num1' : 1
+  'num2' : 2
+  'str' :&quot;snkckjk&quot;
+  'tuple1' : (12,34)
+  'list1' : [12,23,45]
+}
+print(dic['num1'])
+# dict 的内置方法
+dic.items() #返回一个字典的键值对
+
+dic.keys() #返回一个字典的键
+
+dic.values() #返回一个字典的所有值,类型为dict_values 非常奇怪
+
+dic.pop(key) #删除给定键key所对应的值
+
+dic.get(key,default=None) # 返回指定键的值，如果值不在就返回default
+
+dic.setdefault(key,default=None) #返回键值，如果键不存在，就创建key，值为default
+
+dic.update(dict2) #将dict2的值更新在dic里，有键则更新，无键则增加
+
+
+ 
+</code></pre>
+<pre><code class="language-python"># 字符串
+var1 = 'hello world'
+var2 = 'hello python'
+
+# 字符串索引 支持从前向后和从后向前
+var1[2]
+var2[-2]
+
+# 字符串操作
+var3 = var1 + var2
+var4 = var1* 12
+'he ' in var1   # 判断
+'wo' not in var2
+
+# 字符串方法
+
+</code></pre>
+<p>字符串方法太多，有需求请去查表，大致可分为以下几类</p>
+<p>分类</p>
+<ol>
+<li>
+<p>包含is，是否判断</p>
+</li>
+<li>
+<p>查找和判断，涉及两个字符</p>
+</li>
+<li>
+<p>大小写转换，</p>
+</li>
+<li>
+<p>涉及对齐，可以居中对齐，可以左对齐，右对齐</p>
+</li>
+<li>
+<p>去除空白字符，和对齐配合使用</p>
+</li>
+<li>
+<p>字符串的拆分与拼接</p>
+</li>
+</ol>
+<p><a href="https://www.runoob.com/python/python-strings.html">菜鸟教程｜python3 字符串</a></p>
+<p>字典和列表常常同时使用，在字典中存储一个物体的全部信息，然后把各个物体的所有信息存储在一个列表内。<br>
+总的来看，python 中没有指针，字符串相较于c++封装的更像一个对象，而元组，列表，字典加起来吊打数组，比数组的功能强大的多。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://firemakerwillow.github.io/post/markdown-yu-fa/">
+                  <h3 class="post-title">
+                    markdown 语法
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
