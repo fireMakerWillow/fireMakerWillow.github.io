@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://firemakerwillow.github.io</id>
     <title>工业区的后宅</title>
-    <updated>2021-02-21T13:44:28.180Z</updated>
+    <updated>2021-02-22T12:04:25.885Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://firemakerwillow.github.io"/>
     <link rel="self" href="https://firemakerwillow.github.io/atom.xml"/>
@@ -11,7 +11,63 @@
     <icon>https://firemakerwillow.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 工业区的后宅</rights>
     <entry>
-        <title type="html"><![CDATA[python c++ 对比教程]]></title>
+        <title type="html"><![CDATA[【政治哲学1】政治哲学何以成为一种可能]]></title>
+        <id>https://firemakerwillow.github.io/post/zheng-zhi-zhe-xue-1-zheng-zhi-zhe-xue-he-yi-cheng-wei-yi-chong-ke-neng/</id>
+        <link href="https://firemakerwillow.github.io/post/zheng-zhi-zhe-xue-1-zheng-zhi-zhe-xue-he-yi-cheng-wei-yi-chong-ke-neng/">
+        </link>
+        <updated>2021-02-22T11:51:53.000Z</updated>
+        <content type="html"><![CDATA[<p><em>作为政治哲学的首篇文章，我们需要解决如下问题：1.什么是政治哲学？2.政治哲学的历史 3.为什么需要有政治哲学？4.政治哲学的根本问题</em>。</p>
+<h1 id="什么是政治哲学">什么是政治哲学？</h1>
+<p>我们将<strong>政治</strong>界定为</p>
+<p><em>作为政治共同体的国家或政治社会之<mark>公共权力</mark>——通过国家和社会的基本政治制度体系——<mark>的</mark>公共组织、公共秩序和国家<mark>组织治理</mark>。</em></p>
+<p>根据上述定义，我们能推断出以下内容</p>
+<ul>
+<li>
+<p>政治，与政治哲学所研究的，规定的内容必须是公共领域的，而不是私人领域的。这就需要搞清楚公私的界限，这一界限，有时是明确的，有时是隐晦的。一般来讲，可称为“公”的内容有以下特征：</p>
+<ol>
+<li>能与人分享</li>
+<li>是透明的，能暴露在光天化日之下</li>
+<li>是开放的，可改进的</li>
+</ol>
+<p>对应的，属于私人领域的事物有这样的特征</p>
+<ol>
+<li>不可分享，私有的物品，念头，精神不可分享</li>
+<li>不透明，隐私的东西具有独特的神圣性。</li>
+</ol>
+</li>
+<li>
+<p>政治研究的对象是权力，权力如何产生，如何发挥效能是一个深刻的问题。按照社会契约论的观点，公共权力不是自发产生的，是每个成员都承认，都接受的，在每一个社会成员都认可的前提下，把个体的一部分权力让渡出来给公共权力。这种让渡不是割肉一样的让渡，只是一种社会成员的普遍认可。</p>
+</li>
+<li>
+<p>政治哲学是要研究治理的，但我们不应该站在治理者的角度去思考问题，而应该更多的站在被治者的角度考虑问题。</p>
+</li>
+</ul>
+<p>对政治哲学的界定取自列奥·施特劳斯《何谓政治哲学》：</p>
+<p><em>政治哲学，是人们对有关获得美好生活和健全的社会的知识的追求。是用关于政治事务性质的知识取代关于政治事务性质的简介的一种尝试</em>。</p>
+<p>政治哲学和政治学的区别是另一个重要的问题。</p>
+<p>政治哲学更多的关注那些被视为最基本的政治原则和核心政治理念，以及如何给这些政治组织和政治理想提供某种可普遍化的和终极的哲学基础证明；</p>
+<p>而政治学则更多地关注于政治组织的政治行为本身的现实合理性和有效性论证。</p>
+<p>政治哲学和政治学的差异，就类似于病理学和诊断的差异。</p>
+<h1 id="政治哲学的历史与中国政治哲学的困难">政治哲学的历史与中国政治哲学的困难</h1>
+<p>政治哲学是众多哲学门类中重要的能切入实际生活的学科，脱离了政治哲学，哲学会成为与人类社会生活和重大事件毫无干系的玄思空想。所以，前秦的孔子到西方古希腊的苏格拉底、柏拉图、亚里士多德无一例外的把人类社会的政治生活当成理所当然的哲学主题。虽然有着久远的过去，根据施特劳斯在《何谓政治哲学》中的观点，经过始于马基雅维利(16世纪)、中经卢梭(18世纪）、近到尼采（19世纪）的“三次现代性浪潮”的连续冲击，西方政治哲学及其传统已在接二连三的危机中无可挽回地衰落了。当马基雅维利以政治权力取代政治美德、卢梭以自由（权利）作为政治原则、尼采用权力意志取代国家政治本身时，在古老雅典城邦的政治生活和古希腊哲贤的“爱智”冒险中生长出来的政治哲学,便开始从 “权力政治学”向“自由（权利）政治学”———经过霍布斯的“自然权利政治学”和的“财产政治学”的预制——最后到”权力意志政治学”的蜕变。在另一篇同样著名的论文《现代性的三次浪潮》之开篇,施特劳斯指出,现代性的三次浪潮不仅是西方“现代性危机”、乃至斯宾格勒所说的“西方文明的衰落”本身不断暴露、日趋深刻的见证,更是西方政治哲学陷入深刻危机的见证,其危机如此深刻和严重,以至于政治哲学在今天的世界已无可能!</p>
+<p>这种悲观的论断源于两个方面，一是政治逐渐脱离了道德，专注于技术合理性的支撑。另一方面，现代哲学也在努力实现自己的知识合法性和科学性证明，让哲学的根基更加完美。</p>
+<p>政治哲学的式微，表现在人们不再关注政治的目的性价值根基和政治伦理的正当性辩护。政治哲学的前路在何方，这是一个重要的问题。</p>
+<p>中国政治哲学的困难，一部分是整个政治哲学环境的困难。政治哲学环境的困难，一方面如政治哲学的历史所述，存在自己的合法性问题——政治的发展越来越要求对各种价值的包容，以求得建立稳定的治理，而政治哲学，却期望给政治一个价值判断上的合理性解释。另一方面，政治哲学太难了，政治哲学研究的是社会化的人，但人太复杂了，我们很难对人有一个完美的假定，罗尔斯认为人都有自己的是非判断，并会趋善避恶，在这个基础上他建立了自己的《正义论》。但这个前提真的成立吗？并不是所有人都这样认为。</p>
+<p>政治本身是严肃的，是人能参与的社会活动中最严肃的存在，人可以犯纪律错误，可以犯学术错误，但不能犯政治错误。</p>
+<p>而在中国，这个环境尤其严肃，尤其是经过文革，因为长期的恐惧，人们对政治哲学避而不谈，在此之前，政治哲学不仅不是一个学科，甚至不是一个研究方向。</p>
+<h1 id="为什么需要有政治哲学">为什么需要有政治哲学</h1>
+<p>首先是因为我国的政治哲学落后，政治哲学在我国，只有二十年左右的历史，与其他地区政治哲学的发展存在差距。</p>
+<p>其次是政治哲学用哲学的角度观察社会，是要从更高的视角，从根本上解决社会问题。政治是一件严肃的事情，既然严肃，就更需要理性，更需要谨慎。</p>
+<p>最后在当代西方自由主义政治思潮的强势压力之下 , 诸如民主政治 、 人权、 政府过度行政干预等等 , 常常成为西方国家指责我国政治事务的借口 。在此情形下, 如何既能坚持中国特色社会主义民主政治改革又能切实推进我国政治文明的建设, 的确成为包括哲学界在内的所有当代中国学人和政治家所必须承担的一项特别重要的政治理论责任与政治职责</p>
+<h1 id="政治哲学的根本问题">政治哲学的根本问题</h1>
+<p>对比自然中的万物，人类生而脆弱，而脆弱的人类，却能成为万物的看护者，是因为我们选择了社会的生活方式。我们选择社会化的生活方式，是为了追求安宁(well-being)，我们要通过社会化防止各种各样的自然灾害和其他生物的威胁，是为了追求福利(well-fare)，我们一起生活要比单独一个人生活的更美满。</p>
+<p>社会化生活实现了上述目标，人类以国家和社会的形式组织起来。有组织就必然会有层级，有层级就必然有high-rank。这一过程是通过社会成员让渡权力来实现的。</p>
+<p>但让渡权力是一个危险的举动，我们可以选择把钱交与银行管理，我们获得了利息，银行得到了收入，皆大欢喜，但只要我们不愿意，我们可以随时把钱取回来，但权力不是这样。我们生活在社会里，不能收回自己让渡的权力，权力一旦让渡，就有了约束个体，伤害个体的可能。</p>
+<p>所以政治哲学的根本问题，是公共权力和公民权利的关系问题。我们把政治哲学看作一种寻找限制政治权利的手段。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[python c++ 对比教程（一）]]></title>
         <id>https://firemakerwillow.github.io/post/python-c-dui-bi-jiao-cheng/</id>
         <link href="https://firemakerwillow.github.io/post/python-c-dui-bi-jiao-cheng/">
         </link>
@@ -326,8 +382,8 @@ var4 = var1* 12
 <p>\1. items</p>
 <h4 id="24-task-list">2.4 Task List</h4>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-255290"><label class="task-list-item-label" for="task-item-255290"> Task1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-131259"><label class="task-list-item-label" for="task-item-131259"> Task2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3869189"><label class="task-list-item-label" for="task-item-3869189"> Task1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7074684"><label class="task-list-item-label" for="task-item-7074684"> Task2</label></li>
 </ul>
 <p>- [ ] task1</p>
 <h4 id="25-code-blocks">2.5 Code Blocks</h4>
