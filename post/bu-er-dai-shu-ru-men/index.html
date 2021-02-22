@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>布尔代数入门 | 工业区的后宅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://firemakerwillow.github.io/favicon.ico?v=1614003985875">
+<link rel="stylesheet" href="https://firemakerwillow.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="本文参考自布尔代数入门｜阮一峰
+集合论用于表达人的逻辑思维
+逻辑推导完全可以写成数学的形式，它更精确，使我们更容易得到隐晦的结果。逻辑推导用到的数学工具是集合。我们以
+
+大前提：人都是会死的
+小前提：苏格拉底是人
+结论：苏格拉底会死
+
+来展..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://firemakerwillow.github.io">
+        <img src="https://firemakerwillow.github.io/images/avatar.png?v=1614003985875" class="site-logo">
+        <h1 class="site-title">工业区的后宅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一代人终将老去，但总有人永远年轻
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://firemakerwillow.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">布尔代数入门</h2>
+            <div class="post-date">2021-02-22</div>
+            
+            <div class="post-content" v-pre>
+              <p><em>本文参考自<a href="http://www.ruanyifeng.com/blog/2016/08/boolean-algebra.html">布尔代数入门｜阮一峰</a></em></p>
+<h1 id="集合论用于表达人的逻辑思维">集合论用于表达人的逻辑思维</h1>
+<p>逻辑推导完全可以写成数学的形式，它更精确，使我们更容易得到隐晦的结果。逻辑推导用到的数学工具是集合。我们以</p>
+<blockquote>
+<p>大前提：人都是会死的</p>
+<p>小前提：苏格拉底是人</p>
+<p>结论：苏格拉底会死</p>
+</blockquote>
+<p>来展示用集合的语言描述逻辑。</p>
+<p>我们定义集合R为所有人类，定义D为所有会死的东西，于是我们将大前提</p>
+<blockquote>
+<p>人都是会死的</p>
+</blockquote>
+<p>写成：</p>
+<blockquote>
+<p>R X D = R</p>
+</blockquote>
+<p>的形式，</p>
+<p>我们定义S 为苏格拉底集合，小前提</p>
+<blockquote>
+<p>苏格拉底是人</p>
+</blockquote>
+<p>写成集合语言为</p>
+<blockquote>
+<p>S X R = S</p>
+</blockquote>
+<p>集合之间最基本的关系是并集和交集。这里用（X）来表示交集，用（+）来表示并集。</p>
+<p>同样的，结论可以写成如下形式</p>
+<blockquote>
+<p>苏格拉底会死</p>
+<p>S X D = S</p>
+</blockquote>
+<p>如何从大小前提出发得到结论呢？我们发现只要将大前提代入小前提即可</p>
+<blockquote>
+<p>S X R</p>
+<p>= S X (R X D)</p>
+<p>= S X R X D</p>
+<p>= S X D</p>
+<p>= S</p>
+</blockquote>
+<p>所以 <mark>三段论逻辑本质上是一种逻辑的迭代运算</mark>。</p>
+<p>我们可以尝试着用得到的结论去解决一些更为复杂的逻辑运算。</p>
+<blockquote>
+<p>大前提： 鸭嘴兽是卵生的哺乳动物。</p>
+<p>小前提：鸭嘴兽是澳洲的动物</p>
+</blockquote>
+<p>我们将描述转化为集合语言。定义Y为鸭嘴兽，R为卵生的哺乳动物，A为澳洲的动物。</p>
+<blockquote>
+<p>大前提：Y X R = Y</p>
+<p>小前提：Y X A = Y</p>
+</blockquote>
+<p>代入运算</p>
+<blockquote>
+<p>Y X R</p>
+<p>= Y X （A X R）</p>
+<p>= Y</p>
+</blockquote>
+<p>我们得到了鸭嘴兽是卵生的澳大利亚哺乳动物的结论。这一结论也可以描述为有的卵生动物是澳洲的动物，或者有的澳洲动物是卵生的。</p>
+<p>再尝试一个：</p>
+<blockquote>
+<p>哲学家都是有逻辑头脑的</p>
+<p>一个没有逻辑头脑的人总是很顽固的</p>
+</blockquote>
+<p>P = 哲学家 L= 有逻辑头脑的人  S = 顽固的人，这里要用到‘非’的符号 -</p>
+<blockquote>
+<p>P X L = P</p>
+<p>(- L) X S = (- L)</p>
+</blockquote>
+<p>这个需要非集的运算规则，最基本的运算规则需要定义空集和全集，空集定义为0，全集定义为I 则</p>
+<blockquote>
+<p>A + (- A) = I</p>
+<p>A X (- A) = 0</p>
+</blockquote>
+<p>则</p>
+<blockquote>
+<p>B</p>
+<p>= B X I</p>
+<p>= B X (A + -A )</p>
+<p>= B X A + (- A) X B</p>
+</blockquote>
+<p>有了这个式子做基础，我们来计算</p>
+<blockquote>
+<p>P x (- L)</p>
+<p>= P X L X (-L)</p>
+<p>= P X 0</p>
+<p>= 0</p>
+</blockquote>
+<p>所以哲学家都不是没有逻辑的人成立</p>
+<blockquote>
+<p>(-L) X S</p>
+<p>= (-L) X S X (P + (-P) )</p>
+<p>= (- L) X S X P + (- L) X S X (- P)</p>
+<p>= (-L) X P X S + (- L) X S X (-P)</p>
+<p>= (- L ) X S X (- P)</p>
+<p>= (- L)</p>
+</blockquote>
+<p>这个结论可以表述为 存在顽固的非哲学家，这些人中的一部分没有逻辑。</p>
+<h1 id="从集合论到布尔代数">从集合论到布尔代数</h1>
+<p>通过上面的例子，我们意识到命题可以用集合表达，逻辑推导可以通过集合运算实现。</p>
+<p>我们可以通过计算来证明命题的真伪。</p>
+<p>比如下面一个问题</p>
+<blockquote>
+<p>一名顾客进入了宠物店，对店员说：我要一个公猫，白色或黄色均可；或者一只母猫，除了白色，其他颜色都可以；或者只要是黑猫，我也要。</p>
+<p>这时店员拿出一只灰色的公猫，请问是否满足要求。</p>
+</blockquote>
+<p>我们当然可以继续用上面的方法来计算这个问题，</p>
+<p>我们用 W，Y，B , G来表示白色，黄色，黑色和灰色</p>
+<p>用 M 和 F 表示公猫和母猫，用C来表示顾客的要求，用S表示店员的供货。问题转化为</p>
+<blockquote>
+<p>C =  M X (W + Y) + F X (-W) + B</p>
+<p>S = M X G</p>
+<p>求 C X S</p>
+</blockquote>
+<p>计算结果为</p>
+<blockquote>
+<p>C X S</p>
+<p>= M X (W + Y) X S + F X (- W)  X S + B X S</p>
+<p>= M X M X (W + Y) X G + F X M X (-W) X G + B X M X G</p>
+<p>= 0 + 0 + 0</p>
+<p>= 0</p>
+</blockquote>
+<p>C X S 为空集，说明供货不满足要求</p>
+<p>我们还有更简单的方式来解决这个问题，对于C中出现的每一个集合，我们用 1 表示S在该集合中，用 0 表是不在该集合中，得到</p>
+<blockquote>
+<p>1 X (0 + 0) + 0 X 1 + 0</p>
+<p>= 0</p>
+</blockquote>
+<p>下面这个计算方法就是布尔代数。</p>
+<h1 id="布尔代数的运算法则">布尔代数的运算法则</h1>
+<ol>
+<li>交集</li>
+</ol>
+<blockquote>
+<p>1 X 1 = 1</p>
+<p>1 X 0 = 0</p>
+<p>0 X 0 = 0</p>
+</blockquote>
+<ol start="2">
+<li>并集</li>
+</ol>
+<blockquote>
+<p>1 + 1 = 1</p>
+<p>1 + 0 = 0</p>
+<p>0 + 0 = 0</p>
+</blockquote>
+<p>布尔代数的基本运算规则只有这些了。布尔代数实现了逻辑推理的数学化，程序化，能保证推理过程的正确。这是一个非常伟大的进步。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://firemakerwillow.github.io/post/zheng-zhi-zhe-xue-1-zheng-zhi-zhe-xue-he-yi-cheng-wei-yi-chong-ke-neng/">
+                  <h3 class="post-title">
+                    【政治哲学1】政治哲学何以成为一种可能
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
