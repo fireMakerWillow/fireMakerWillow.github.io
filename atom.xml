@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://firemakerwillow.github.io</id>
     <title>工业区的后宅</title>
-    <updated>2021-02-22T14:26:29.047Z</updated>
+    <updated>2021-02-23T07:36:35.930Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://firemakerwillow.github.io"/>
     <link rel="self" href="https://firemakerwillow.github.io/atom.xml"/>
@@ -10,6 +10,50 @@
     <logo>https://firemakerwillow.github.io/images/avatar.png</logo>
     <icon>https://firemakerwillow.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 工业区的后宅</rights>
+    <entry>
+        <title type="html"><![CDATA[【概率论1】Sample Space and Probability models]]></title>
+        <id>https://firemakerwillow.github.io/post/gai-lu-lun-1-sample-space-and-probability-models/</id>
+        <link href="https://firemakerwillow.github.io/post/gai-lu-lun-1-sample-space-and-probability-models/">
+        </link>
+        <updated>2021-02-23T07:33:28.000Z</updated>
+        <content type="html"><![CDATA[<p><em>概率论的系列教程。笔记和教程是两种东西，虽然教程是没人看的，但还是要有一个假想对象，要按照教程的方式去写，要有引言，对每一部分的写作目的都有说明，而且环环相扣。</em></p>
+<p><em>本套概率论教程需要提前掌握高中的概率论知识。参考的教材为 Introduction of Probability,书是英文，所以专有名词会用英语，避免不当翻译，而描述会使用汉语。</em></p>
+<h1 id="部分概念的定义">部分概念的定义</h1>
+<p>这都是一些便于理解的概念，相信大家之前也都有所感知，对它们做出规定有助于将来的分析。</p>
+<p><strong>sample space</strong> :一个概率事件的所有可能情况的集合。它有两个性质，如下</p>
+<p>​	<strong>Mutually exclusion</strong> : 其包含的各个可能情况互不相交，确保每个测试只有一个结果，不多。</p>
+<p>​	<strong>Collectively exhaustive</strong> : 其包含所有可能的情况，确保每个测试必有一个结果，不少。</p>
+<p>一个例子为，扔出一枚骰子，其sample space为 Ω={1,2,3,4,5,6}</p>
+<p><strong>Event</strong>：sample space 的子集。</p>
+<p>在扔骰子中，一个Event为 A={1,2,3}，event和sample space 的选取要结合实际问题。</p>
+<h1 id="概率基本定律">概率基本定律</h1>
+<blockquote>
+<ol>
+<li>P(A) ≥ 0</li>
+<li>P(I) = 1    # I 表示全集</li>
+<li>如果 A ∩ B = Ø   P(A∪B) = P (A) + P (B)</li>
+</ol>
+</blockquote>
+<p>这些定律直观上成立，客观上作为基本定律不予证明。</p>
+<h1 id="概率模型">概率模型</h1>
+<h2 id="1probabilistic-models">1.probabilistic models</h2>
+<p>最基础的模型，概率基本定律建立在它的基础上，一个典型的例子就是扔一次骰子。</p>
+<h2 id="2-sequential-models">2. Sequential Models</h2>
+<p>可以看作多个probabilistic models 的叠加，例如扔两个骰子，它可以用表格或者树状图描述。</p>
+<p>![截屏2021-02-23 下午3.13.53](/Users/changhao/Desktop/permanent/myPage/images/截屏2021-02-23 下午3.13.53.png)</p>
+<h2 id="3-discrete-models">3. Discrete Models</h2>
+<p>离散模型，结果是有限的，或者至少是可数的，例如扔一枚骰子，它只有6种最基本的可能。</p>
+<p>特别的，当它的每种结果都相同时，被称为 Discrete Uniform Probability，在中学被称为古典概型。</p>
+<h2 id="4-continuous-models">4. continuous Models</h2>
+<p>例如将一根绳子随机剪断，剪短的位置一样的概率，在中学被称为几何概型。它的结果是无限的，而且是不可数的，对于特定值的概率，我们不认为它有意义，并记为P(A)=0</p>
+<p>只有当event是一个区间时，它才能有一个确切的值。</p>
+<h1 id="概率论解决现实问题的一般步骤">概率论解决现实问题的一般步骤</h1>
+<p>可概括为两个步骤</p>
+<p>1.抽象</p>
+<p>2.计算</p>
+<p>在抽象中，我们要根据现实中的条件，根据我们的需求，建立合适的概率模型，它的本质困呐在于这是一个开放性的问题，什么样的模型更能反映现实，能便于解决问题，没有一个一定之规。在计算中，我们要基于建立的模型，根据概率的定律进行运算，如果运算复杂这个步骤也可能变得很困难。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[布尔代数入门]]></title>
         <id>https://firemakerwillow.github.io/post/bu-er-dai-shu-ru-men/</id>
@@ -536,8 +580,8 @@ var4 = var1* 12
 <p>\1. items</p>
 <h4 id="24-task-list">2.4 Task List</h4>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2716502"><label class="task-list-item-label" for="task-item-2716502"> Task1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3090071"><label class="task-list-item-label" for="task-item-3090071"> Task2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-928676"><label class="task-list-item-label" for="task-item-928676"> Task1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8843129"><label class="task-list-item-label" for="task-item-8843129"> Task2</label></li>
 </ul>
 <p>- [ ] task1</p>
 <h4 id="25-code-blocks">2.5 Code Blocks</h4>

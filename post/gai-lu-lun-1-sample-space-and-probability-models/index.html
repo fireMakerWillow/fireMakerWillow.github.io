@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【概率论1】Sample Space and Probability models | 工业区的后宅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://firemakerwillow.github.io/favicon.ico?v=1614065792347">
+<link rel="stylesheet" href="https://firemakerwillow.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="概率论的系列教程。笔记和教程是两种东西，虽然教程是没人看的，但还是要有一个假想对象，要按照教程的方式去写，要有引言，对每一部分的写作目的都有说明，而且环环相扣。
+本套概率论教程需要提前掌握高中的概率论知识。参考的教材为 Introducti..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://firemakerwillow.github.io">
+        <img src="https://firemakerwillow.github.io/images/avatar.png?v=1614065792347" class="site-logo">
+        <h1 class="site-title">工业区的后宅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一代人终将老去，但总有人永远年轻
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://firemakerwillow.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【概率论1】Sample Space and Probability models</h2>
+            <div class="post-date">2021-02-23</div>
+            
+            <div class="post-content" v-pre>
+              <p><em>概率论的系列教程。笔记和教程是两种东西，虽然教程是没人看的，但还是要有一个假想对象，要按照教程的方式去写，要有引言，对每一部分的写作目的都有说明，而且环环相扣。</em></p>
+<p><em>本套概率论教程需要提前掌握高中的概率论知识。参考的教材为 Introduction of Probability,书是英文，所以专有名词会用英语，避免不当翻译，而描述会使用汉语。</em></p>
+<h1 id="部分概念的定义">部分概念的定义</h1>
+<p>这都是一些便于理解的概念，相信大家之前也都有所感知，对它们做出规定有助于将来的分析。</p>
+<p><strong>sample space</strong> :一个概率事件的所有可能情况的集合。它有两个性质，如下</p>
+<p>​	<strong>Mutually exclusion</strong> : 其包含的各个可能情况互不相交，确保每个测试只有一个结果，不多。</p>
+<p>​	<strong>Collectively exhaustive</strong> : 其包含所有可能的情况，确保每个测试必有一个结果，不少。</p>
+<p>一个例子为，扔出一枚骰子，其sample space为 Ω={1,2,3,4,5,6}</p>
+<p><strong>Event</strong>：sample space 的子集。</p>
+<p>在扔骰子中，一个Event为 A={1,2,3}，event和sample space 的选取要结合实际问题。</p>
+<h1 id="概率基本定律">概率基本定律</h1>
+<blockquote>
+<ol>
+<li>P(A) ≥ 0</li>
+<li>P(I) = 1    # I 表示全集</li>
+<li>如果 A ∩ B = Ø   P(A∪B) = P (A) + P (B)</li>
+</ol>
+</blockquote>
+<p>这些定律直观上成立，客观上作为基本定律不予证明。</p>
+<h1 id="概率模型">概率模型</h1>
+<h2 id="1probabilistic-models">1.probabilistic models</h2>
+<p>最基础的模型，概率基本定律建立在它的基础上，一个典型的例子就是扔一次骰子。</p>
+<h2 id="2-sequential-models">2. Sequential Models</h2>
+<p>可以看作多个probabilistic models 的叠加，例如扔两个骰子，它可以用表格或者树状图描述。</p>
+<p>![截屏2021-02-23 下午3.13.53](/Users/changhao/Desktop/permanent/myPage/images/截屏2021-02-23 下午3.13.53.png)</p>
+<h2 id="3-discrete-models">3. Discrete Models</h2>
+<p>离散模型，结果是有限的，或者至少是可数的，例如扔一枚骰子，它只有6种最基本的可能。</p>
+<p>特别的，当它的每种结果都相同时，被称为 Discrete Uniform Probability，在中学被称为古典概型。</p>
+<h2 id="4-continuous-models">4. continuous Models</h2>
+<p>例如将一根绳子随机剪断，剪短的位置一样的概率，在中学被称为几何概型。它的结果是无限的，而且是不可数的，对于特定值的概率，我们不认为它有意义，并记为P(A)=0</p>
+<p>只有当event是一个区间时，它才能有一个确切的值。</p>
+<h1 id="概率论解决现实问题的一般步骤">概率论解决现实问题的一般步骤</h1>
+<p>可概括为两个步骤</p>
+<p>1.抽象</p>
+<p>2.计算</p>
+<p>在抽象中，我们要根据现实中的条件，根据我们的需求，建立合适的概率模型，它的本质困呐在于这是一个开放性的问题，什么样的模型更能反映现实，能便于解决问题，没有一个一定之规。在计算中，我们要基于建立的模型，根据概率的定律进行运算，如果运算复杂这个步骤也可能变得很困难。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://firemakerwillow.github.io/post/bu-er-dai-shu-ru-men/">
+                  <h3 class="post-title">
+                    布尔代数入门
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
