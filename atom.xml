@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://firemakerwillow.github.io</id>
     <title>工业区的后宅</title>
-    <updated>2021-02-24T02:41:27.430Z</updated>
+    <updated>2021-02-24T09:35:06.624Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://firemakerwillow.github.io"/>
     <link rel="self" href="https://firemakerwillow.github.io/atom.xml"/>
@@ -10,6 +10,56 @@
     <logo>https://firemakerwillow.github.io/images/avatar.png</logo>
     <icon>https://firemakerwillow.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 工业区的后宅</rights>
+    <entry>
+        <title type="html"><![CDATA[背单词的命运不可逃脱]]></title>
+        <id>https://firemakerwillow.github.io/post/bei-dan-ci-de-ming-yun-bu-ke-tao-tuo/</id>
+        <link href="https://firemakerwillow.github.io/post/bei-dan-ci-de-ming-yun-bu-ke-tao-tuo/">
+        </link>
+        <updated>2021-02-24T09:32:22.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2>
+<p>首先应该认清一点，背单词书是有效果的，是快速提升词汇量的很好的选择。词汇量的提升有两种，一是在阅读中积累词汇，二是背诵词汇书。我分析一下这两种词汇的优劣性。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th>在阅读中积累词汇</th>
+<th style="text-align:left">单词书</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">优势</td>
+<td>1.有语境辅助理解  2.可以记住一些生僻意 3.同时记住用法</td>
+<td style="text-align:left">1.卡片已经制作完成 2.词汇必然需要记忆 3.</td>
+</tr>
+<tr>
+<td style="text-align:center">劣势</td>
+<td>1.需要自行制作卡片 2.可能会记忆一些用处不大的生僻词</td>
+<td style="text-align:left">1.记住形体，没有记住灵魂 2.应用时不能上口，停留在单词书的记忆中。</td>
+</tr>
+</tbody>
+</table>
+<p>我觉得对于初学者和小白，还是需要背单词书快速扩充一下词汇量的，单词是一切的基础，学了单词可以在其他场景下多用弥补以单词书的短板。</p>
+<h2 id="词汇记忆曲线">词汇记忆曲线</h2>
+<p>按照网上的一篇教程制作了以下词汇记忆表</p>
+<p>![截屏2021-02-24 下午5.10.01](/Users/changhao/Library/Application Support/typora-user-images/截屏2021-02-24 下午5.10.01.png)</p>
+<p>暂时先做这么多吧，打表格好累</p>
+<h2 id="记忆方法">记忆方法</h2>
+<h4 id="1过眼10min">1.过眼（10min）</h4>
+<p>整体熟悉一遍，就是看一遍，试图记忆词性和意思，就过一遍</p>
+<h4 id="2过心30min">2.过心（30min）</h4>
+<p>盖上中文，逐个单词过一遍，不知道意思的单词看中文意思，用联想，谐音或种种办法，读下发音，尽力记住意思，并做个记号。</p>
+<h4 id="3强化20min">3.强化（20min）</h4>
+<p>重复第二步，仍然记不清的再做记号</p>
+<h4 id="4-强化">4. 强化</h4>
+<p>重复上述步骤，一般第五遍都记不住的单词，就暂时先搁置吧。😭😭😭</p>
+<h2 id="复习方法">复习方法</h2>
+<p>盖住中文，知道就过，不留念，重点关注记号最多的单词。</p>
+<h2 id="一些要点">一些要点</h2>
+<p>记住中文就行了，进阶的事情以后再做</p>
+<p>中文意思都记不全也没关系了，好歹混个脸熟就是。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【概率论1】Sample Space and Probability models]]></title>
         <id>https://firemakerwillow.github.io/post/gai-lu-lun-1-sample-space-and-probability-models/</id>
@@ -583,8 +633,8 @@ var4 = var1* 12
 <p>\1. items</p>
 <h4 id="24-task-list">2.4 Task List</h4>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6263704"><label class="task-list-item-label" for="task-item-6263704"> Task1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3294616"><label class="task-list-item-label" for="task-item-3294616"> Task2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1705218"><label class="task-list-item-label" for="task-item-1705218"> Task1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4835236"><label class="task-list-item-label" for="task-item-4835236"> Task2</label></li>
 </ul>
 <p>- [ ] task1</p>
 <h4 id="25-code-blocks">2.5 Code Blocks</h4>
