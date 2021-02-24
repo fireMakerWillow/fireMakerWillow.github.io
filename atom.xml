@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://firemakerwillow.github.io</id>
     <title>工业区的后宅</title>
-    <updated>2021-02-24T09:35:06.624Z</updated>
+    <updated>2021-02-24T11:03:50.842Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://firemakerwillow.github.io"/>
     <link rel="self" href="https://firemakerwillow.github.io/atom.xml"/>
@@ -95,7 +95,7 @@
 <p>离散模型，结果是有限的，或者至少是可数的，例如扔一枚骰子，它只有6种最基本的可能。</p>
 <p>特别的，当它的每种结果都相同时，被称为 Discrete Uniform Probability，在中学被称为古典概型。</p>
 <h2 id="4-continuous-models">4. continuous Models</h2>
-<p>例如将一根绳子随机剪断，剪短的位置一样的概率，在中学被称为几何概型。它的结果是无限的，而且是不可数的，对于特定值的概率，我们不认为它有意义，并记为P(A)=0</p>
+<p>例如将一根绳子随机剪断，剪断的位置一样的概率，在中学被称为几何概型。它的结果是无限的，而且是不可数的，对于特定值的概率，我们不认为它有意义，并记为P(A)=0</p>
 <p>只有当event是一个区间时，它才能有一个确切的值。</p>
 <h1 id="概率论解决现实问题的一般步骤">概率论解决现实问题的一般步骤</h1>
 <p>可概括为两个步骤</p>
@@ -633,8 +633,8 @@ var4 = var1* 12
 <p>\1. items</p>
 <h4 id="24-task-list">2.4 Task List</h4>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1705218"><label class="task-list-item-label" for="task-item-1705218"> Task1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4835236"><label class="task-list-item-label" for="task-item-4835236"> Task2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1713652"><label class="task-list-item-label" for="task-item-1713652"> Task1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6643554"><label class="task-list-item-label" for="task-item-6643554"> Task2</label></li>
 </ul>
 <p>- [ ] task1</p>
 <h4 id="25-code-blocks">2.5 Code Blocks</h4>
