@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【逻辑学 1】变元和逻辑常量 | 工业区的后宅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://firemakerwillow.github.io/favicon.ico?v=1614411466520">
+<link rel="stylesheet" href="https://firemakerwillow.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="引论
+逻辑学是研究人思维规律的学科，我们期望能发现某种思维规律，使得机械式，通用的判断变得可靠。而逻辑推理何以变得可靠？这是逻辑学研究的中心问题。换句话说，逻辑学是研究推理有效性的学科。
+如何理解推理的有效性？我们希望通过某种形式的逻辑推理..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://firemakerwillow.github.io">
+        <img src="https://firemakerwillow.github.io/images/avatar.png?v=1614411466520" class="site-logo">
+        <h1 class="site-title">工业区的后宅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一代人终将老去，但总有人永远年轻
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://firemakerwillow.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【逻辑学 1】变元和逻辑常量</h2>
+            <div class="post-date">2021-02-27</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="引论">引论</h1>
+<p>逻辑学是研究人思维规律的学科，我们期望能发现某种思维规律，使得机械式，通用的判断变得可靠。而逻辑推理何以变得可靠？这是逻辑学研究的中心问题。换句话说，<strong>逻辑学是研究推理有效性的学科</strong>。</p>
+<p>如何理解推理的有效性？我们希望通过某种形式的逻辑推理，实现只要前提是真，则结论一定是真。如果某个形式逻辑满足这个条件，则我们称这个形式逻辑是有效的。</p>
+<h2 id="变元和逻辑常量">变元和逻辑常量</h2>
+<p>我们来看下面三个推理结构</p>
+<ol>
+<li>
+<p><mark>若</mark>姚明是诗人，<mark>则</mark>姚明是文学家；</p>
+<p>姚明不是诗人，</p>
+<p><mark>所以</mark>，姚明不是文学家</p>
+</li>
+<li>
+<p><mark>若</mark>鲁迅是诗人，<mark>则</mark>鲁迅是文学家；</p>
+<p>鲁迅不是诗人，</p>
+<p><mark>所以</mark>，鲁迅不是文学家</p>
+</li>
+<li>
+<p><mark>若</mark>孔子会使用微信，<mark>则</mark>孔子会使用手机；</p>
+<p>孔子不会使用微信，</p>
+<p><mark>所以</mark>，孔子不会使用手机</p>
+</li>
+</ol>
+<p>这三个推理结构有相似之处，其中一和二只是把名字更改了一下，把姚明改成了鲁迅。而三看上去与一二不同，但仔细思考会感觉有相似之处，它们似乎拥有一些共同的形式。我们可以把这三个命题归纳如下。</p>
+<p><mark>若</mark> p，<mark>则</mark> q</p>
+<p><mark>非</mark> p</p>
+<p><mark>所以</mark> q</p>
+<p>我们把命题中承担逻辑功能的词语留下，剩下的部分用字母代替，就得到了上面的形式。</p>
+<p>高亮的部分就是逻辑常量，可变，可实例化的字母就是变元。</p>
+<h2 id="逻辑结构的分类">逻辑结构的分类</h2>
+<p>我们将按序研究以下的逻辑结构，这也算是我们的笔记大纲了。</p>
+<ol>
+<li>命题逻辑</li>
+<li>词项逻辑</li>
+<li>谓词逻辑</li>
+<li>一阶逻辑</li>
+</ol>
+<p>参考的书目为《逻辑基础》王路。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://firemakerwillow.github.io/post/xin-hao-yu-xi-tong-1-he-wei-xin-hao-he-wei-xi-tong/">
+                  <h3 class="post-title">
+                    【信号与系统 1】何为信号？何为系统？
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

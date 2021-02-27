@@ -1,67 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://firemakerwillow.github.io</id>
-    <title>工业区的后宅</title>
-    <updated>2021-02-27T07:37:51.300Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://firemakerwillow.github.io"/>
-    <link rel="self" href="https://firemakerwillow.github.io/atom.xml"/>
-    <subtitle>一代人终将老去，但总有人永远年轻</subtitle>
-    <logo>https://firemakerwillow.github.io/images/avatar.png</logo>
-    <icon>https://firemakerwillow.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, 工业区的后宅</rights>
-    <entry>
-        <title type="html"><![CDATA[【逻辑学 1】变元和逻辑常量]]></title>
-        <id>https://firemakerwillow.github.io/post/luo-ji-xue-1-bian-yuan-he-luo-ji-chang-liang/</id>
-        <link href="https://firemakerwillow.github.io/post/luo-ji-xue-1-bian-yuan-he-luo-ji-chang-liang/">
-        </link>
-        <updated>2021-02-27T07:37:11.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="引论">引论</h1>
-<p>逻辑学是研究人思维规律的学科，我们期望能发现某种思维规律，使得机械式，通用的判断变得可靠。而逻辑推理何以变得可靠？这是逻辑学研究的中心问题。换句话说，<strong>逻辑学是研究推理有效性的学科</strong>。</p>
-<p>如何理解推理的有效性？我们希望通过某种形式的逻辑推理，实现只要前提是真，则结论一定是真。如果某个形式逻辑满足这个条件，则我们称这个形式逻辑是有效的。</p>
-<h2 id="变元和逻辑常量">变元和逻辑常量</h2>
-<p>我们来看下面三个推理结构</p>
-<ol>
-<li>
-<p><mark>若</mark>姚明是诗人，<mark>则</mark>姚明是文学家；</p>
-<p>姚明不是诗人，</p>
-<p><mark>所以</mark>，姚明不是文学家</p>
-</li>
-<li>
-<p><mark>若</mark>鲁迅是诗人，<mark>则</mark>鲁迅是文学家；</p>
-<p>鲁迅不是诗人，</p>
-<p><mark>所以</mark>，鲁迅不是文学家</p>
-</li>
-<li>
-<p><mark>若</mark>孔子会使用微信，<mark>则</mark>孔子会使用手机；</p>
-<p>孔子不会使用微信，</p>
-<p><mark>所以</mark>，孔子不会使用手机</p>
-</li>
-</ol>
-<p>这三个推理结构有相似之处，其中一和二只是把名字更改了一下，把姚明改成了鲁迅。而三看上去与一二不同，但仔细思考会感觉有相似之处，它们似乎拥有一些共同的形式。我们可以把这三个命题归纳如下。</p>
-<p><mark>若</mark> p，<mark>则</mark> q</p>
-<p><mark>非</mark> p</p>
-<p><mark>所以</mark> q</p>
-<p>我们把命题中承担逻辑功能的词语留下，剩下的部分用字母代替，就得到了上面的形式。</p>
-<p>高亮的部分就是逻辑常量，可变，可实例化的字母就是变元。</p>
-<h2 id="逻辑结构的分类">逻辑结构的分类</h2>
-<p>我们将按序研究以下的逻辑结构，这也算是我们的笔记大纲了。</p>
-<ol>
-<li>命题逻辑</li>
-<li>词项逻辑</li>
-<li>谓词逻辑</li>
-<li>一阶逻辑</li>
-</ol>
-<p>参考的书目为《逻辑基础》王路。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【信号与系统 1】何为信号？何为系统？]]></title>
-        <id>https://firemakerwillow.github.io/post/xin-hao-yu-xi-tong-1-he-wei-xin-hao-he-wei-xi-tong/</id>
-        <link href="https://firemakerwillow.github.io/post/xin-hao-yu-xi-tong-1-he-wei-xin-hao-he-wei-xi-tong/">
-        </link>
-        <updated>2021-02-25T04:41:24.000Z</updated>
-        <content type="html"><![CDATA[<p><em>《信号与系统》的第一篇博客，本博客希望达到如下目的：</em></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【信号与系统 1】何为信号？何为系统？ | 工业区的后宅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://firemakerwillow.github.io/favicon.ico?v=1614411466520">
+<link rel="stylesheet" href="https://firemakerwillow.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="《信号与系统》的第一篇博客，本博客希望达到如下目的：
+1. 涵盖本课程的知识结构，知识脉络。
+2. 通俗易懂，便于理解。
+3. 增删补缀，使内容前后之间更有逻辑
+何为信号？何为系统？
+信号的概念就是大家理解的样子，花开了是一种信号，电话响了..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://firemakerwillow.github.io">
+        <img src="https://firemakerwillow.github.io/images/avatar.png?v=1614411466520" class="site-logo">
+        <h1 class="site-title">工业区的后宅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一代人终将老去，但总有人永远年轻
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://firemakerwillow.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【信号与系统 1】何为信号？何为系统？</h2>
+            <div class="post-date">2021-02-25</div>
+            
+            <div class="post-content" v-pre>
+              <p><em>《信号与系统》的第一篇博客，本博客希望达到如下目的：</em></p>
 <p><em>1. 涵盖本课程的知识结构，知识脉络。</em></p>
 <p><em>2. 通俗易懂，便于理解。</em></p>
 <p><em>3. 增删补缀，使内容前后之间更有逻辑</em></p>
@@ -162,697 +200,46 @@
 <h2 id="结语">结语</h2>
 <p>本节我们界定了系统和信号，并通过分类法和举例法使大家对系统，对信号有初步的认识。</p>
 <p>之后的教程中重点关注的线性时不变系统，因为实际情况中很多系统都被抽象为了线性时不变系统。下一节我们将对线性时不变系统有一个初步的认识。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[背单词的命运不可逃脱]]></title>
-        <id>https://firemakerwillow.github.io/post/bei-dan-ci-de-ming-yun-bu-ke-tao-tuo/</id>
-        <link href="https://firemakerwillow.github.io/post/bei-dan-ci-de-ming-yun-bu-ke-tao-tuo/">
-        </link>
-        <updated>2021-02-24T09:32:22.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="前言">前言</h2>
-<p>首先应该认清一点，背单词书是有效果的，是快速提升词汇量的很好的选择。词汇量的提升有两种，一是在阅读中积累词汇，二是背诵词汇书。我分析一下这两种词汇的优劣性。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th>在阅读中积累词汇</th>
-<th style="text-align:left">单词书</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">优势</td>
-<td>1.有语境辅助理解  2.可以记住一些生僻意 3.同时记住用法</td>
-<td style="text-align:left">1.卡片已经制作完成 2.词汇必然需要记忆 3.</td>
-</tr>
-<tr>
-<td style="text-align:center">劣势</td>
-<td>1.需要自行制作卡片 2.可能会记忆一些用处不大的生僻词</td>
-<td style="text-align:left">1.记住形体，没有记住灵魂 2.应用时不能上口，停留在单词书的记忆中。</td>
-</tr>
-</tbody>
-</table>
-<p>我觉得对于初学者和小白，还是需要背单词书快速扩充一下词汇量的，单词是一切的基础，学了单词可以在其他场景下多用弥补以单词书的短板。</p>
-<h2 id="词汇记忆曲线">词汇记忆曲线</h2>
-<p>按照网上的一篇教程制作了以下词汇记忆表</p>
-<p>![截屏2021-02-24 下午5.10.01](/Users/changhao/Library/Application Support/typora-user-images/截屏2021-02-24 下午5.10.01.png)</p>
-<p>暂时先做这么多吧，打表格好累</p>
-<h2 id="记忆方法">记忆方法</h2>
-<h4 id="1过眼10min">1.过眼（10min）</h4>
-<p>整体熟悉一遍，就是看一遍，试图记忆词性和意思，就过一遍</p>
-<h4 id="2过心30min">2.过心（30min）</h4>
-<p>盖上中文，逐个单词过一遍，不知道意思的单词看中文意思，用联想，谐音或种种办法，读下发音，尽力记住意思，并做个记号。</p>
-<h4 id="3强化20min">3.强化（20min）</h4>
-<p>重复第二步，仍然记不清的再做记号</p>
-<h4 id="4-强化">4. 强化</h4>
-<p>重复上述步骤，一般第五遍都记不住的单词，就暂时先搁置吧。😭😭😭</p>
-<h2 id="复习方法">复习方法</h2>
-<p>盖住中文，知道就过，不留念，重点关注记号最多的单词。</p>
-<h2 id="一些要点">一些要点</h2>
-<p>记住中文就行了，进阶的事情以后再做</p>
-<p>中文意思都记不全也没关系了，好歹混个脸熟就是。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【概率论1】Sample Space and Probability models]]></title>
-        <id>https://firemakerwillow.github.io/post/gai-lu-lun-1-sample-space-and-probability-models/</id>
-        <link href="https://firemakerwillow.github.io/post/gai-lu-lun-1-sample-space-and-probability-models/">
-        </link>
-        <updated>2021-02-23T07:33:28.000Z</updated>
-        <content type="html"><![CDATA[<p><em>概率论的系列教程。笔记和教程是两种东西，虽然教程是没人看的，但还是要有一个假想对象，要按照教程的方式去写，要有引言，对每一部分的写作目的都有说明，而且环环相扣。</em></p>
-<p><em>本套概率论教程需要提前掌握高中的概率论知识。参考的教材为 Introduction of Probability,书是英文，所以专有名词会用英语，避免不当翻译，而描述会使用汉语。</em></p>
-<h1 id="部分概念的定义">部分概念的定义</h1>
-<p>这都是一些便于理解的概念，相信大家之前也都有所感知，对它们做出规定有助于将来的分析。</p>
-<p><strong>sample space</strong> :一个概率事件的所有可能情况的集合。它有两个性质，如下</p>
-<p>​	<strong>Mutually exclusion</strong> : 其包含的各个可能情况互不相交，确保每个测试只有一个结果，不多。</p>
-<p>​	<strong>Collectively exhaustive</strong> : 其包含所有可能的情况，确保每个测试必有一个结果，不少。</p>
-<p>一个例子为，扔出一枚骰子，其sample space为 Ω={1,2,3,4,5,6}</p>
-<p><strong>Event</strong>：sample space 的子集。</p>
-<p>在扔骰子中，一个Event为 A={1,2,3}，event和sample space 的选取要结合实际问题。</p>
-<h1 id="概率基本定律">概率基本定律</h1>
-<blockquote>
-<ol>
-<li>P(A) ≥ 0</li>
-<li>P(I) = 1    # I 表示全集</li>
-<li>如果 A ∩ B = Ø   P(A∪B) = P (A) + P (B)</li>
-</ol>
-</blockquote>
-<p>这些定律直观上成立，客观上作为基本定律不予证明。</p>
-<h1 id="概率模型">概率模型</h1>
-<h2 id="1probabilistic-models">1.probabilistic models</h2>
-<p>最基础的模型，概率基本定律建立在它的基础上，一个典型的例子就是扔一次骰子。</p>
-<h2 id="2-sequential-models">2. Sequential Models</h2>
-<p>可以看作多个probabilistic models 的叠加，例如扔两个骰子，它可以用表格或者树状图描述。</p>
-<p>![截屏2021-02-23 下午3.13.53](/Users/changhao/Desktop/permanent/myPage/images/截屏2021-02-23 下午3.13.53.png)</p>
-<h2 id="3-discrete-models">3. Discrete Models</h2>
-<p>离散模型，结果是有限的，或者至少是可数的，例如扔一枚骰子，它只有6种最基本的可能。</p>
-<p>特别的，当它的每种结果都相同时，被称为 Discrete Uniform Probability，在中学被称为古典概型。</p>
-<h2 id="4-continuous-models">4. continuous Models</h2>
-<p>例如将一根绳子随机剪断，剪断的位置一样的概率，在中学被称为几何概型。它的结果是无限的，而且是不可数的，对于特定值的概率，我们不认为它有意义，并记为P(A)=0</p>
-<p>只有当event是一个区间时，它才能有一个确切的值。</p>
-<h1 id="概率论解决现实问题的一般步骤">概率论解决现实问题的一般步骤</h1>
-<p>可概括为两个步骤</p>
-<p>1.抽象</p>
-<p>2.计算</p>
-<p>在抽象中，我们要根据现实中的条件，根据我们的需求，建立合适的概率模型，它的本质困呐在于这是一个开放性的问题，什么样的模型更能反映现实，能便于解决问题，没有一个一定之规。在计算中，我们要基于建立的模型，根据概率的定律进行运算，如果运算复杂这个步骤也可能变得很困难。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[布尔代数入门]]></title>
-        <id>https://firemakerwillow.github.io/post/bu-er-dai-shu-ru-men/</id>
-        <link href="https://firemakerwillow.github.io/post/bu-er-dai-shu-ru-men/">
-        </link>
-        <updated>2021-02-22T14:26:01.000Z</updated>
-        <content type="html"><![CDATA[<p><em>本文参考自<a href="http://www.ruanyifeng.com/blog/2016/08/boolean-algebra.html">布尔代数入门｜阮一峰</a></em></p>
-<h1 id="集合论用于表达人的逻辑思维">集合论用于表达人的逻辑思维</h1>
-<p>逻辑推导完全可以写成数学的形式，它更精确，使我们更容易得到隐晦的结果。逻辑推导用到的数学工具是集合。我们以</p>
-<blockquote>
-<p>大前提：人都是会死的</p>
-<p>小前提：苏格拉底是人</p>
-<p>结论：苏格拉底会死</p>
-</blockquote>
-<p>来展示用集合的语言描述逻辑。</p>
-<p>我们定义集合R为所有人类，定义D为所有会死的东西，于是我们将大前提</p>
-<blockquote>
-<p>人都是会死的</p>
-</blockquote>
-<p>写成：</p>
-<blockquote>
-<p>R X D = R</p>
-</blockquote>
-<p>的形式，</p>
-<p>我们定义S 为苏格拉底集合，小前提</p>
-<blockquote>
-<p>苏格拉底是人</p>
-</blockquote>
-<p>写成集合语言为</p>
-<blockquote>
-<p>S X R = S</p>
-</blockquote>
-<p>集合之间最基本的关系是并集和交集。这里用（X）来表示交集，用（+）来表示并集。</p>
-<p>同样的，结论可以写成如下形式</p>
-<blockquote>
-<p>苏格拉底会死</p>
-<p>S X D = S</p>
-</blockquote>
-<p>如何从大小前提出发得到结论呢？我们发现只要将大前提代入小前提即可</p>
-<blockquote>
-<p>S X R</p>
-<p>= S X (R X D)</p>
-<p>= S X R X D</p>
-<p>= S X D</p>
-<p>= S</p>
-</blockquote>
-<p>所以 <mark>三段论逻辑本质上是一种逻辑的迭代运算</mark>。</p>
-<p>我们可以尝试着用得到的结论去解决一些更为复杂的逻辑运算。</p>
-<blockquote>
-<p>大前提： 鸭嘴兽是卵生的哺乳动物。</p>
-<p>小前提：鸭嘴兽是澳洲的动物</p>
-</blockquote>
-<p>我们将描述转化为集合语言。定义Y为鸭嘴兽，R为卵生的哺乳动物，A为澳洲的动物。</p>
-<blockquote>
-<p>大前提：Y X R = Y</p>
-<p>小前提：Y X A = Y</p>
-</blockquote>
-<p>代入运算</p>
-<blockquote>
-<p>Y X R</p>
-<p>= Y X （A X R）</p>
-<p>= Y</p>
-</blockquote>
-<p>我们得到了鸭嘴兽是卵生的澳大利亚哺乳动物的结论。这一结论也可以描述为有的卵生动物是澳洲的动物，或者有的澳洲动物是卵生的。</p>
-<p>再尝试一个：</p>
-<blockquote>
-<p>哲学家都是有逻辑头脑的</p>
-<p>一个没有逻辑头脑的人总是很顽固的</p>
-</blockquote>
-<p>P = 哲学家 L= 有逻辑头脑的人  S = 顽固的人，这里要用到‘非’的符号 -</p>
-<blockquote>
-<p>P X L = P</p>
-<p>(- L) X S = (- L)</p>
-</blockquote>
-<p>这个需要非集的运算规则，最基本的运算规则需要定义空集和全集，空集定义为0，全集定义为I 则</p>
-<blockquote>
-<p>A + (- A) = I</p>
-<p>A X (- A) = 0</p>
-</blockquote>
-<p>则</p>
-<blockquote>
-<p>B</p>
-<p>= B X I</p>
-<p>= B X (A + -A )</p>
-<p>= B X A + (- A) X B</p>
-</blockquote>
-<p>有了这个式子做基础，我们来计算</p>
-<blockquote>
-<p>P x (- L)</p>
-<p>= P X L X (-L)</p>
-<p>= P X 0</p>
-<p>= 0</p>
-</blockquote>
-<p>所以哲学家都不是没有逻辑的人成立</p>
-<blockquote>
-<p>(-L) X S</p>
-<p>= (-L) X S X (P + (-P) )</p>
-<p>= (- L) X S X P + (- L) X S X (- P)</p>
-<p>= (-L) X P X S + (- L) X S X (-P)</p>
-<p>= (- L ) X S X (- P)</p>
-<p>= (- L)</p>
-</blockquote>
-<p>这个结论可以表述为 存在顽固的非哲学家，这些人中的一部分没有逻辑。</p>
-<h1 id="从集合论到布尔代数">从集合论到布尔代数</h1>
-<p>通过上面的例子，我们意识到命题可以用集合表达，逻辑推导可以通过集合运算实现。</p>
-<p>我们可以通过计算来证明命题的真伪。</p>
-<p>比如下面一个问题</p>
-<blockquote>
-<p>一名顾客进入了宠物店，对店员说：我要一个公猫，白色或黄色均可；或者一只母猫，除了白色，其他颜色都可以；或者只要是黑猫，我也要。</p>
-<p>这时店员拿出一只灰色的公猫，请问是否满足要求。</p>
-</blockquote>
-<p>我们当然可以继续用上面的方法来计算这个问题，</p>
-<p>我们用 W，Y，B , G来表示白色，黄色，黑色和灰色</p>
-<p>用 M 和 F 表示公猫和母猫，用C来表示顾客的要求，用S表示店员的供货。问题转化为</p>
-<blockquote>
-<p>C =  M X (W + Y) + F X (-W) + B</p>
-<p>S = M X G</p>
-<p>求 C X S</p>
-</blockquote>
-<p>计算结果为</p>
-<blockquote>
-<p>C X S</p>
-<p>= M X (W + Y) X S + F X (- W)  X S + B X S</p>
-<p>= M X M X (W + Y) X G + F X M X (-W) X G + B X M X G</p>
-<p>= 0 + 0 + 0</p>
-<p>= 0</p>
-</blockquote>
-<p>C X S 为空集，说明供货不满足要求</p>
-<p>我们还有更简单的方式来解决这个问题，对于C中出现的每一个集合，我们用 1 表示S在该集合中，用 0 表是不在该集合中，得到</p>
-<blockquote>
-<p>1 X (0 + 0) + 0 X 1 + 0</p>
-<p>= 0</p>
-</blockquote>
-<p>下面这个计算方法就是布尔代数。</p>
-<h1 id="布尔代数的运算法则">布尔代数的运算法则</h1>
-<ol>
-<li>交集</li>
-</ol>
-<blockquote>
-<p>1 X 1 = 1</p>
-<p>1 X 0 = 0</p>
-<p>0 X 0 = 0</p>
-</blockquote>
-<ol start="2">
-<li>并集</li>
-</ol>
-<blockquote>
-<p>1 + 1 = 1</p>
-<p>1 + 0 = 0</p>
-<p>0 + 0 = 0</p>
-</blockquote>
-<p>布尔代数的基本运算规则只有这些了。布尔代数实现了逻辑推理的数学化，程序化，能保证推理过程的正确。这是一个非常伟大的进步。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【政治哲学1】政治哲学何以成为一种可能]]></title>
-        <id>https://firemakerwillow.github.io/post/zheng-zhi-zhe-xue-1-zheng-zhi-zhe-xue-he-yi-cheng-wei-yi-chong-ke-neng/</id>
-        <link href="https://firemakerwillow.github.io/post/zheng-zhi-zhe-xue-1-zheng-zhi-zhe-xue-he-yi-cheng-wei-yi-chong-ke-neng/">
-        </link>
-        <updated>2021-02-22T11:51:53.000Z</updated>
-        <content type="html"><![CDATA[<p><em>作为政治哲学的首篇文章，我们需要解决如下问题：1.什么是政治哲学？2.政治哲学的历史 3.为什么需要有政治哲学？4.政治哲学的根本问题</em>。</p>
-<h1 id="什么是政治哲学">什么是政治哲学？</h1>
-<p>我们将<strong>政治</strong>界定为</p>
-<p><em>作为政治共同体的国家或政治社会之<mark>公共权力</mark>——通过国家和社会的基本政治制度体系——<mark>的</mark>公共组织、公共秩序和国家<mark>组织治理</mark>。</em></p>
-<p>根据上述定义，我们能推断出以下内容</p>
-<ul>
-<li>
-<p>政治，与政治哲学所研究的，规定的内容必须是公共领域的，而不是私人领域的。这就需要搞清楚公私的界限，这一界限，有时是明确的，有时是隐晦的。一般来讲，可称为“公”的内容有以下特征：</p>
-<ol>
-<li>能与人分享</li>
-<li>是透明的，能暴露在光天化日之下</li>
-<li>是开放的，可改进的</li>
-</ol>
-<p>对应的，属于私人领域的事物有这样的特征</p>
-<ol>
-<li>不可分享，私有的物品，念头，精神不可分享</li>
-<li>不透明，隐私的东西具有独特的神圣性。</li>
-</ol>
-</li>
-<li>
-<p>政治研究的对象是权力，权力如何产生，如何发挥效能是一个深刻的问题。按照社会契约论的观点，公共权力不是自发产生的，是每个成员都承认，都接受的，在每一个社会成员都认可的前提下，把个体的一部分权力让渡出来给公共权力。这种让渡不是割肉一样的让渡，只是一种社会成员的普遍认可。</p>
-</li>
-<li>
-<p>政治哲学是要研究治理的，但我们不应该站在治理者的角度去思考问题，而应该更多的站在被治者的角度考虑问题。</p>
-</li>
-</ul>
-<p>对政治哲学的界定取自列奥·施特劳斯《何谓政治哲学》：</p>
-<p><em>政治哲学，是人们对有关获得美好生活和健全的社会的知识的追求。是用关于政治事务性质的知识取代关于政治事务性质的常识的一种尝试</em>。</p>
-<p>其实上述描述对政治哲学和政治学都成立，政治哲学和政治学的区别是另一个重要的问题。</p>
-<p>一般来说，政治哲学更多的关注那些被视为最基本的政治原则和核心政治理念，以及如何给这些政治组织和政治理想提供某种可普遍化的和终极的哲学基础证明；</p>
-<p>而政治学则更多地关注于政治组织的政治行为本身的现实合理性和有效性论证。</p>
-<p>政治哲学和政治学的差异，就类似于病理学和诊断的差异。政治哲学站在更根本，更高的层面思考问题。</p>
-<h1 id="政治哲学的历史与中国政治哲学的困难">政治哲学的历史与中国政治哲学的困难</h1>
-<p>政治哲学是众多哲学门类中重要的能切入实际生活的学科，脱离了政治哲学，哲学会成为与人类社会生活和重大事件毫无干系的玄思空想。所以，前秦的孔子到西方古希腊的苏格拉底、柏拉图、亚里士多德无一例外的把人类社会的政治生活当成理所当然的哲学主题。虽然有着久远的过去，根据施特劳斯在《何谓政治哲学》中的观点，经过始于马基雅维利(16世纪)、中经卢梭(18世纪）、近到尼采（19世纪）的“三次现代性浪潮”的连续冲击，西方政治哲学及其传统已在接二连三的危机中无可挽回地衰落了。当马基雅维利以政治权力取代政治美德、卢梭以自由（权利）作为政治原则、尼采用权力意志取代国家政治本身时，在古老雅典城邦的政治生活和古希腊哲贤的“爱智”冒险中生长出来的政治哲学,便开始从 “权力政治学”向“自由（权利）政治学”———经过霍布斯的“自然权利政治学”和的“财产政治学”的预制——最后到”权力意志政治学”的蜕变。在另一篇同样著名的论文《现代性的三次浪潮》之开篇,施特劳斯指出,现代性的三次浪潮不仅是西方“现代性危机”、乃至斯宾格勒所说的“西方文明的衰落”本身不断暴露、日趋深刻的见证,更是西方政治哲学陷入深刻危机的见证,其危机如此深刻和严重,以至于政治哲学在今天的世界已无可能!</p>
-<p>政治哲学的式微，表现在人们不再关注政治的目的性价值根基和政治伦理的正当性辩护。政治哲学的前路在何方，这是一个重要的问题。</p>
-<p>中国政治哲学的困难，一部分是整个政治哲学环境的困难。政治哲学环境的困难，一方面如政治哲学的历史所述，出现了自身合法性的问题——政治的发展越来越要求对各种价值的包容，以求得建立稳定的治理，而政治哲学，却期望给政治一个价值判断上的合理性解释。另一方面，政治哲学太难了，政治哲学研究的是社会化的人，但人太复杂了，我们很难对人有一个完美的假定，罗尔斯认为人都有自己的是非判断，并会趋善避恶，在这个基础上他建立了自己的《正义论》。但这个前提真的成立吗？并不是所有人都这样认为。</p>
-<p>中国政治哲学亦有其自身的困难，政治本身是严肃的，是人能参与的社会活动中最严肃的存在，人可以犯纪律错误，可以犯学术错误，但不能犯政治错误。</p>
-<p>而在中国，这个环境尤其严肃，尤其是经过文革，因为长期的恐惧，人们对政治哲学避而不谈，在此之前，政治哲学不仅不是一个学科，甚至不是一个研究方向。这是政治环境的结果，也是哲学研究环境的结果，西方的哲学基本分成两方面，哲学强的学校在做分析哲学等现代哲学研究，推动哲学的科学化，而一般的大学几乎都开设了政治哲学等实践性哲学。在我国，大部分哲学学者都在做哲学史，这是一个学术背景造成的困难。</p>
-<h1 id="为什么需要有政治哲学">为什么需要有政治哲学</h1>
-<p>首先是因为我国的政治哲学落后，政治哲学在我国，只有二十年左右的历史，与其他地区政治哲学的发展存在差距。</p>
-<p>其次是政治哲学用哲学的角度观察社会，是要从更高的视角，从根本上解决社会问题。政治是一件严肃的事情，既然严肃，就更需要理性，更需要谨慎。这恰恰是哲学的擅场。</p>
-<p>最后在当代西方自由主义政治思潮的强势压力之下 , 诸如民主政治 、 人权、 政府过度行政干预等等 , 常常成为西方国家指责我国政治事务的借口 。在此情形下, 如何既能坚持中国特色社会主义民主政治改革又能切实推进我国政治文明的建设, 的确成为包括哲学界在内的所有当代中国学人和政治家所必须承担的一项特别重要的政治理论责任与政治职责。</p>
-<h1 id="政治哲学的根本问题">政治哲学的根本问题</h1>
-<p>对比自然中的万物，人类生而脆弱，而脆弱的人类，却能成为万物的看护者，是因为我们选择了社会的生活方式。我们选择社会化的生活方式，是为了追求安宁(well-being)，我们要通过社会化防止各种各样的自然灾害和其他生物的威胁，是为了追求福利(well-fare)，我们一起生活要比单独一个人生活的更美满。</p>
-<p>社会化生活实现了上述目标，人类以国家和社会的形式组织起来。有组织就必然会有层级，有层级就必然有high-rank。high-rank本身没有问题，问题在于谁来组成high-rank，谁来组成底层。底层应该有怎样的生活。</p>
-<p>社会化是通过让渡权力实现的，但让渡权力是一个危险的举动，我们可以选择把钱交与银行管理，我们获得了利息，银行得到了收入，皆大欢喜，但只要我们不愿意，我们可以随时把钱取回来，但权力不是这样。我们生活在社会里，不能收回自己让渡的权力，权力一旦让渡，就不可收回，而权力的力量又太大，随时有约束个体，伤害个体的可能。如何避免这种伤害，是一个问题。</p>
-<p>综上的这些问题都是政治哲学根本问题的反映，所谓政治哲学的根本问题，是公共权力和公民权利的关系问题。本质上讲，我们把政治哲学看作一种寻找限制政治权力的手段。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[python c++ 对比教程（一）]]></title>
-        <id>https://firemakerwillow.github.io/post/python-c-dui-bi-jiao-cheng/</id>
-        <link href="https://firemakerwillow.github.io/post/python-c-dui-bi-jiao-cheng/">
-        </link>
-        <updated>2021-02-21T13:25:08.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
-<p>这是博主的第一篇“技术”博客，浅显直白，试水之作，还望海涵。</p>
-<p>本教程提供学习python的一种思路，对比c++教程，看python的异同之处。如果先前已经学习过c++，那么这将是一种学习python的很自然的思路。</p>
-<h1 id="一-hello-world">一. hello world</h1>
-<pre><code class="language-c++"># include &lt;iostream&gt;
-using namespace std;
-int main()
-{
-  cout&lt;&lt;&quot;hello world&quot;;
-  return 0;
-}
-</code></pre>
-<pre><code class="language-python">print('hello world')
-</code></pre>
-<p>可以看到python的“hello world”程序较c++非常简单。这是因为c++是一门<mark>编译型语言</mark>，需要非常完整的程序结构，有主程序。而python是一门<mark>解释型语言</mark>，程序从上到下一句一句执行，不需要完整的程序结构。</p>
-<p>python的解释性使它不仅可以通过程序运行，还可以交互式运行，在terminal里输入python3，如果下载了ipython3，也可以输入ipython3，进入交互式使用界面。</p>
-<p>这里解释一下为什么是python3 ，因为python3 是python的全新版本，python创造者为了它的完美放弃了向下兼容，也就是说，python 中的部分程序是不能在最新的python3中运行的。</p>
-<h1 id="二-注释">二. 注释</h1>
-<pre><code class="language-c++">// 这是一个行注释
-/*这是一个块注释
-这是一个块注释
-这是一个块注释*/
-</code></pre>
-<pre><code class="language-python"># 这是一个行注释
-'''
-这是一个块注释
-这是一个块注释
-这是一个块注释
-'''
-</code></pre>
-<p>注释容易混淆</p>
-<h1 id="三-基本数据类型">三 .基本数据类型</h1>
-<pre><code class="language-c++">#include&lt;iostream&gt;
-int main()
-{
-  int num = 0;
-  float numpoint = 1.2;
-  double numlongpoint = 6.9;
-  char character = 'a';
-  bool tof = true;
-  
-}
-</code></pre>
-<pre><code class="language-python">num = 0
-numpoint = 1.2
-character = 'a'
-tof = True
-</code></pre>
-<p>python 不需要指定数据类型。C++和python的变量机制似乎不同（此处我的理解很模糊）：c++是首先根据变量类型分配空间，然后在空间内赋值，python是首先有一个值，然后给这个值绑上一个标签。</p>
-<h1 id="四-高级数据类型">四. 高级数据类型</h1>
-<pre><code class="language-c++"># include&lt;iostream&gt;
-int main()
-{
-  // 枚举
-  enum color_set1 {red,blue,white,black};
-  // 枚举常量 red=0 blue=1  
-  color_set1 color1;
-  color1 = red;
-  color_set1 color2 = blue;
-}
-</code></pre>
-<p>枚举类型主要作用是提高代码可读性。</p>
-<pre><code class="language-c++"># include &lt;iostream&gt;
-int main()
-{
-  // 数组
-  int numset1[20];
-  char charaset2[30];
-  // 初始化数组
-  double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
-  char str1[] = &quot;hbibnjnl&quot;;
-}
-</code></pre>
-<p>数组必须在定义时确定大小</p>
-<pre><code class="language-c++"># include &lt;iostream&gt;
-# include &lt;cstring&gt;
-# include &lt;string&gt;
-using namespace std;
-int main()
-{
-  // cstring字符串
-  char str1[13] = &quot;runoob&quot;;// 共7位，最后一位为'\0'
-  char str2[13] = &quot;google&quot;;
-  char str3[13];
-  int  len ;
-  
-   // 复制 str1 到 str3
-  strcpy( str3, str1);
-  cout &lt;&lt; &quot;strcpy( str3, str1) : &quot; &lt;&lt; str3 &lt;&lt; endl;
- 
-   // 连接 str1 和 str2
-  strcat( str1, str2);
-  cout &lt;&lt; &quot;strcat( str1, str2): &quot; &lt;&lt; str1 &lt;&lt; endl;
- 
-   // 连接后，str1 的总长度
-  len = strlen(str1);
-  cout &lt;&lt; &quot;strlen(str1) : &quot; &lt;&lt; len &lt;&lt; endl;
- 
-  // string 字符串
-  string str1 = &quot;runoob&quot;;
-  string str2 = &quot;google&quot;;
-  string str3;
-  int  len ;
- 
-  // 复制 str1 到 str3
-  str3 = str1;
-  cout &lt;&lt; &quot;str3 : &quot; &lt;&lt; str3 &lt;&lt; endl;
- 
-   // 连接 str1 和 str2
-  str3 = str1 + str2;
-  cout &lt;&lt; &quot;str1 + str2 : &quot; &lt;&lt; str3 &lt;&lt; endl;
- 
-   // 连接后，str3 的总长度
-  len = str3.size();
-  cout &lt;&lt; &quot;str3.size() :  &quot; &lt;&lt; len &lt;&lt; endl;
- 
-  
-  return 0;
-}
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://firemakerwillow.github.io/post/bei-dan-ci-de-ming-yun-bu-ke-tao-tuo/">
+                  <h3 class="post-title">
+                    背单词的命运不可逃脱
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
 
 
-</code></pre>
-<p>字符串有两种，cstring的字符串保留了更多的c的味道，string字符串更符合面向对象的设计思想，需要引用不同的库</p>
-<pre><code class="language-c++"># include &lt;iostream&gt;
-int main()
-{
-  //指针
- 	char * str1;
-  str1 = new char [] = &quot;hello world&quot;;
-  delete str1;
-  int * num1;
-  int num2 = 3;
-  num1 = &amp; num2; //在指针表量中存储 num2 的地址
- 	std::cout &lt;&lt; num1 &lt;&lt;endl; //输出 num2 的地址
-  std::cout &lt;&lt; *num1 &lt;&lt; endl; //输出num2的值 
-  num1 = NULL; // 设置空指针
-}
-</code></pre>
-<pre><code class="language-python"># 元组
-tuple1 = (1,4,1,&quot;2345&quot;,True)
-print(tuple1[2])
-a = tuple1.index(1)
-b = tuple1.count(1)
-</code></pre>
-<p>元组的特性是不可修改，常常用于函数传递多个参数使用</p>
-<pre><code class="language-python"># 列表
-list1 = ['red','blue','yelloow','white','black']
-print(list1)
-print (list1[-1])
-print (list1[0])
-'''
-列表支持的操作
-append 增加，在列表末尾加元素
-
-count 统计某一元素出现次数
-
-insert，插入元素
-
-reverse，列表反向
-
-clear，盲猜清除
-
-extend，在列表末尾一次性追加一个列表的值
-
-pop,移除队尾元素，并返回该元素的值
-
-sort 排序
-
-copy 暂时不清楚它的作用
-
-index，找到某值对应的第一个索引位置
-
-remove；移除第一个该元素
-'''
-
-</code></pre>
-<p>列表可以用不同类型的值，但一般都会用相同类型的值</p>
-<pre><code class="language-python"># 字典 
-# 由键值对构成，:前为键，:后为值
-# 键必须是数字，字符串，或元组
-dic = {
-  'num1' : 1
-  'num2' : 2
-  'str' :&quot;snkckjk&quot;
-  'tuple1' : (12,34)
-  'list1' : [12,23,45]
-}
-print(dic['num1'])
-# dict 的内置方法
-dic.items() #返回一个字典的键值对
-
-dic.keys() #返回一个字典的键
-
-dic.values() #返回一个字典的所有值,类型为dict_values 非常奇怪
-
-dic.pop(key) #删除给定键key所对应的值
-
-dic.get(key,default=None) # 返回指定键的值，如果值不在就返回default
-
-dic.setdefault(key,default=None) #返回键值，如果键不存在，就创建key，值为default
-
-dic.update(dict2) #将dict2的值更新在dic里，有键则更新，无键则增加
 
 
- 
-</code></pre>
-<pre><code class="language-python"># 字符串
-var1 = 'hello world'
-var2 = 'hello python'
 
-# 字符串索引 支持从前向后和从后向前
-var1[2]
-var2[-2]
 
-# 字符串操作
-var3 = var1 + var2
-var4 = var1* 12
-'he ' in var1   # 判断
-'wo' not in var2
-
-# 字符串方法
-
-</code></pre>
-<p>字符串方法太多，有需求请去查表，大致可分为以下几类</p>
-<p>分类</p>
-<ol>
-<li>
-<p>包含is，是否判断</p>
-</li>
-<li>
-<p>查找和判断，涉及两个字符</p>
-</li>
-<li>
-<p>大小写转换，</p>
-</li>
-<li>
-<p>涉及对齐，可以居中对齐，可以左对齐，右对齐</p>
-</li>
-<li>
-<p>去除空白字符，和对齐配合使用</p>
-</li>
-<li>
-<p>字符串的拆分与拼接</p>
-</li>
-</ol>
-<p><a href="https://www.runoob.com/python/python-strings.html">菜鸟教程｜python3 字符串</a></p>
-<p>字典和列表常常同时使用，在字典中存储一个物体的全部信息，然后把各个物体的所有信息存储在一个列表内。<br>
-总的来看，python 中没有指针，字符串相较于c++封装的更像一个对象，而元组，列表，字典加起来吊打数组，比数组的功能强大的多。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[markdown 语法]]></title>
-        <id>https://firemakerwillow.github.io/post/markdown-yu-fa/</id>
-        <link href="https://firemakerwillow.github.io/post/markdown-yu-fa/">
-        </link>
-        <updated>2021-02-21T09:16:10.000Z</updated>
-        <content type="html"><![CDATA[<p>[toc]</p>
-<h1 id="markdown-exercise-1">markdown exercise 1</h1>
-<p>本文是对typora官方文档的简化，记录了除网络和tex语法外的markdown语法。我将剩下的语法简单分类为文本工具和编辑工具。其中文本工具主要用于让字体显得不同，编辑工具让不同的文段承担不同的功能。</p>
-<p>每个语法点分为两部分，前一部分为效果演示，后一部分为语法。这一篇同时也是一篇markdown语法的测试。</p>
-<h2 id="1text-tools">1.text tools</h2>
-<h4 id="11-strong">1.1 Strong</h4>
-<p><strong>strong</strong>     <em>*strong</em>*   or _<em>strong</em>_</p>
-<h4 id="12-emphasis">1.2 Emphasis</h4>
-<p><em>emphsis</em>    *emphsis*  or  _emphsis_</p>
-<h4 id="13-highlight">1.3 highlight</h4>
-<p><mark>highlight</mark>    ==highlight==</p>
-<h4 id="14-strikethrough">1.4 strikethrough</h4>
-<p><s>strikethrough</s>   ~~strikethrough~~</p>
-<h4 id="15underlines">1.5Underlines</h4>
-<p><u>Underlines</u>    &lt;u&gt;Underlines&lt;/u&gt;</p>
-<h4 id="16-subscript">1.6 Subscript</h4>
-<p>H<sub>2</sub>O   H~2~O</p>
-<h4 id="17-superscript">1.7 Superscript</h4>
-<p>x<sup>2</sup>   x^2^</p>
-<h4 id="18-tex-语法">1.8 tex 语法</h4>
-<p>插入$$  即可使用，具体语法可以参见一些很好的网络博客。</p>
-<p><a href="https://www.cnblogs.com/Neo-KH/p/13280008.html">tex 语法</a></p>
-<h2 id="2exit-tools">2.exit tools</h2>
-<h4 id="21-table">2.1 table</h4>
-<table>
-<thead>
-<tr>
-<th>table1</th>
-<th>table2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>|table1|table2|</p>
-<h4 id="22-blockquotes">2.2 Blockquotes</h4>
-<blockquote>
-<p>This is a blockquote</p>
-</blockquote>
-<p>&gt; this is a blockquote</p>
-<h4 id="23-lists">2.3 Lists</h4>
-<ul>
-<li>item1</li>
-<li>item2</li>
-</ul>
-<ol>
-<li>item1</li>
-<li>item2</li>
-</ol>
-<p>* items</p>
-<p>\1. items</p>
-<h4 id="24-task-list">2.4 Task List</h4>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8407498"><label class="task-list-item-label" for="task-item-8407498"> Task1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6131531"><label class="task-list-item-label" for="task-item-6131531"> Task2</label></li>
-</ul>
-<p>- [ ] task1</p>
-<h4 id="25-code-blocks">2.5 Code Blocks</h4>
-<pre><code class="language-python">def script():
-</code></pre>
-<pre><code>print('this is a code block')
-return 0
-
-script()
-
-</code></pre>
-<p>```</p>
-<h4 id="26-lines">2.6 Lines</h4>
-<hr>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[从《你好，李焕英》到《妈妈再爱我一次》]]></title>
-        <id>https://firemakerwillow.github.io/post/cong-lesslessni-hao-li-huan-ying-greatergreater-dao-lesslessma-ma-zai-ai-wo-yi-ci-greatergreater/</id>
-        <link href="https://firemakerwillow.github.io/post/cong-lesslessni-hao-li-huan-ying-greatergreater-dao-lesslessma-ma-zai-ai-wo-yi-ci-greatergreater/">
-        </link>
-        <updated>2021-02-18T14:36:33.000Z</updated>
-        <content type="html"><![CDATA[<p>《你好，李焕英》这个片子我非常满意，我心甘情愿地献出了自己的眼泪。父母之爱是人间大爱，这个类型的片子很难不让人产生共鸣。督工对这个影片也非常的满意，为此还专门更新了一期《睡前消息》发表影评。</p>
-<p><a href="https://www.bilibili.com/video/BV1Ev4y1Z7TG">【睡前消息236】生于1981，我带着回忆看“李焕英”</a></p>
-<figure data-type="image" tabindex="1"><img src="https://firemakerwillow.github.io/post-images/1613659089209.png" alt="" loading="lazy"></figure>
-<p>督工主要从电影的真实性上发表看法，他认为时代感是这部影片最显著的优点。这部影片非常逼真地再现了80年代大型厂区的工人生活。集体食堂，能放电影的演出舞台，同时承担篮球和排球的水泥操场，一丝一扣都非常真实，作为一部商业片达到了纪录片的效果。</p>
-<p>而我，已经深深的陶醉在李焕英的状貌上了，这是一种毫无棱角却又亭亭玉立的美感。如果我没看错的话，这应该就是多次和贾玲在春晚上合作的那个喜剧演员，回忆她们俩之前的作品，一般都是贾玲演婆婆或者妈，张小斐演媳妇或者女儿，这次她们俩掉了个儿，这本身就是一件很有趣的事情。</p>
-<p>“李焕英”的演员是东北人，以前提起东北女人，总是一种东北大妞的刻板印象。经历了冰冰，经历了这个影片，这种地图炮式的刻板印象该改改了。</p>
-<figure data-type="image" tabindex="2"><img src="https://firemakerwillow.github.io/post-images/1613659104587.webp" alt="" loading="lazy"></figure>
-<p><em>啊！太好看了！太好看了吧！</em></p>
-<p>我觉得督工从真实性这方面谈论这部影片纯粹是既想求得新颖，又不想多费功夫。真实性完全不是这部影片真正出彩的地方，只是锦上添花而已。真正打动我的，是它的立意——“打我有记忆起，妈妈就是个中年妇女的样子。所以我总忘记妈妈曾经也是个花季少女”，是女儿和母亲闺蜜般的感情，是一心只想给母亲带来欢乐，带来更好的生活，甚至愿意自己不会降生的女儿，是不管女儿多么普通，多么比不过人，都支持她，安慰她，以她为傲的母亲，是母亲弥留之际说“宝啊，你要健健康康，快快乐乐”，女儿撕心裂肺的那句“我不能”。</p>
-<p>女儿离不开妈妈，妈妈离不开女儿，“下辈子我当妈”，“不，下辈子还是我当妈”。这是真正的爱，普通却又难得，易懂却又易忘。这种爱，真正予人力量，真正治愈人心。</p>
-<p>影片催人泪下，却又不过度煽情，贾玲对自己的母亲有着强烈的感情，想要输出很多的情绪和想法，但是能做到克制，将情绪把握的非常合适，这一点非常不容易。</p>
-<p>影片的一些细节也是经得起考究的，比如“冷特”这个戏份很重但最后也没有什么结局的人物。这种人物，我一般称之为“工具人”，这种人物纯粹就是为了推进情节发展而设立的。“冷特”在几处情节的发展上发挥了重要作用，比如帮厂长家儿子追求李焕英。一般这种人物就点到为止就好了，但是贾玲还给他安排了一段感情戏，还用他的母亲的病危再次表达对母亲的愧疚，平衡了电影中段浓郁的喜剧氛围，让观众始终做到笑中有泪，也真算是物尽其用了。</p>
-<figure data-type="image" tabindex="3"><img src="https://firemakerwillow.github.io/post-images/1613659113441.webp" alt="" loading="lazy"></figure>
-<p><em>老工具人了</em></p>
-<p>电影结束后，母亲回忆起她们时代最为火爆的亲情类电影《妈妈再爱我一次》，这部九十年代的电影在当时血洗了1个亿的票房，共计约2亿人观看，这个火爆程度远远超过了我听说过的所有影片，当然也远远超过了《你好，李焕英》这部影片。据说当时从电影院出来没有一个人不是哭着的。所以回家之后我和母亲一起看了一遍这个影片。</p>
-<figure data-type="image" tabindex="4"><img src="https://firemakerwillow.github.io/post-images/1613659124750.webp" alt="" loading="lazy"></figure>
-<p>我对这个影片的评价很低，这个影片配不上它在豆瓣上8.3分的评分，它的情节在今天看来已经成为俗套，出身低微的母亲和出身富豪的父亲相爱，却因为家庭的差距不能成婚，不得以母亲带孕离开，历尽辛苦抚养孩子长大，与她人成婚的父亲却不能再生育，这个孩子将是富豪家族唯一的血脉。于是富豪家族软硬结合想要夺走孩子，母亲为了孩子的前途考虑最终同意送走孩子，但孩子和母亲彼此思念，生不如死，孩子屡次离家出走去找母亲，母亲忍痛教训孩子让他不要再回来，不然她就要躲起来再也不见他。母亲为爱折磨，失心成疯，流离不知所终。而孩子学成归来，最后成为一家精神病院的新院长，在医院找到了自己的母亲，两者终得相认，终得团圆。</p>
-<p>整个影片情节过于孱弱，只好用煽情来填充内容。大段大段的哭戏可能在当时能起到煽情的作用，但在我这里只能引起生理不适。仔细想想的话，导演还是做出了一些技法上的尝试，甚至有向现代工业电影发展的倾向。比如知道将父亲结婚和母亲的痛苦生产剪在一起，虽然清代的红楼梦就知道这么写了；比如注重情感上的起伏，将母子在一起的快乐和母子分离的痛苦相间，让观众在对比中感受感情；比如知道运用“世上只有妈妈好”和“母亲买给孩子的熊猫”这样的道具来推动情节，虽然运用的非常生硬；比如注意情节高潮的设置，知道在影片的30min左右设置一个小高潮。</p>
-<p>尽管如此，这部影片是不过关的，这说明了红极一时的文化产品不一定就是好的文化产品，好的文化产品应该能经得起时间的考验。</p>
-<p>这部影片反映了一些时代的印记。这个影片说明了在九十年代，台湾已经具备了相当规模的单亲家庭，虽然单亲妈妈仍要面对非议，但已经成为一个社会现象，可以被自然吸纳为文化产品的题材。这个影片还说明了当时部分台湾单亲家庭依靠母亲自身的劳动已经可以让自己和孩子获得美满幸福的生活，有条件让孩子接受教育。妇女参加劳动，这是工业时代的典型特征，但对应的，落后的思想依然在台湾保留，比如孩子得病之后，母亲不是留在孩子身边陪护，而是叩长头前往寺庙；比如没有儿子，注意影片中就是儿子，就算绝后，是不能被家族接受的事情。</p>
-<p>影片中反映的爱我也不能接受，爱应该给人力量，而不是让人痛苦，如果爱让人如此痛苦，还是不要爱好了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[博主的话]]></title>
-        <id>https://firemakerwillow.github.io/post/about/</id>
-        <link href="https://firemakerwillow.github.io/post/about/">
-        </link>
-        <updated>2021-02-17T11:09:48.000Z</updated>
-        <content type="html"><![CDATA[<p>欢迎来到我的小站呀，很高兴遇见你！🤝<br>
-<img src="https://firemakerwillow.github.io/post-images/1613546448009.jpeg" alt="" loading="lazy"></p>
-<h2 id="关于本站">🏠 关于本站</h2>
-<p>工业区的后宅，以后想写的东西，上课的笔记，随感都会整理整理发这里，网址不会变吧（<s>大概</s>）<br>
-网址是firemakerwillow，《饥荒》玩家可以狂喜了</p>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>封面是本人了（bushi），发量充沛的小小小小小白，有人浏览自己的破站会高兴的不得了，当然你不想浏览他也想的开</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>喜欢活着，其他都可以将就<br>
-在家喜欢咸鱼<br>
-开车时喜欢听摇滚<br>
-不好喝酒，但是喜欢买精酿，因为瓶子洋气</p>
-<h2 id="联系我呀">📬 联系我呀</h2>
-<p>QQ：2410224215（不会真的有人对博主感兴趣吧，不会吧，不会吧</p>
-]]></content>
-    </entry>
-</feed>
+  </body>
+</html>
