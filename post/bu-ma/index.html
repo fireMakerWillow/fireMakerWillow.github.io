@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>补码 | 工业区的后宅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://firemakerwillow.github.io/favicon.ico?v=1614606976090">
+<link rel="stylesheet" href="https://firemakerwillow.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="补码是对数字的一种编码形式，通过这种编码形式，我们能将减法运算转化为加法运算，非常便捷。
+1. 补码的实现
+补码的最高位表示正负，0为正，1为负
+对于正数，取它的二进制形式。例如 3 可以编码为 011，如果是四位编码就是0011
+对于负数..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://firemakerwillow.github.io">
+        <img src="https://firemakerwillow.github.io/images/avatar.png?v=1614606976090" class="site-logo">
+        <h1 class="site-title">工业区的后宅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一代人终将老去，但总有人永远年轻
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://firemakerwillow.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">补码</h2>
+            <div class="post-date">2021-03-01</div>
+            
+            <div class="post-content" v-pre>
+              <p>补码是对数字的一种编码形式，通过这种编码形式，我们能将减法运算转化为加法运算，非常便捷。</p>
+<h3 id="1-补码的实现">1. 补码的实现</h3>
+<p>补码的最高位表示正负，0为正，1为负</p>
+<p>对于正数，取它的二进制形式。例如 3 可以编码为 011，如果是四位编码就是0011</p>
+<p>对于负数，先取它的绝对值的二进制形式，例如-3的绝对值3二进制形式为011，对每一位取反，得到100，再加一，得到101，这就是-3的编码</p>
+<p>对于0，先按位取反得1111，再加1，得到0，所以0的补码是0</p>
+<h3 id="2补码计算加减法">2.补码计算加减法</h3>
+<p>2.1  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">3+5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span></p>
+<p>用5位补码计算,为 00011+00101=01000</p>
+<p>2.2  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>3</mn><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">-3-5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span></p>
+<p>用5位补码计算，为 11101+11011=11100</p>
+<p>2.2  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">5-3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></p>
+<p>用5位补码计算，为00101+11101=00010</p>
+<p>计算均符合结果。</p>
+<h3 id="3补码计算减法的证明">3.补码计算减法的证明</h3>
+<p>根据时钟原理，我们把时钟往前拨4个小时和向后拨8个小时是等价的。</p>
+<p>这里的4+8=12，12就是模长。根据这个原理，我们有x-y=x+m-y,m为模长，</p>
+<p>但模长是不能表示的，就像在钟表中，我们实际上并没有12这个刻度（那个刻度是0，别杠，我说是0就是0），我们不能直接在式子中加一个模长，况且即便能加模长，-y这个本质困难还是没有变。</p>
+<p>所以，我们还需要进行一步操作，这步操作简直绝妙，x+m-y=x+m-1-y+1</p>
+<p>而m-1就是全1的形式，如果是5位编码，这个数就是11111，如果是3位，就是111</p>
+<p>然后就得到了x-y=x+1111...-y+1,而且11111-y恰好就是对y按位取反，这就得到了</p>
+<p>x-y=x+y~+1 y~+1就是补码，这里我们就得到了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>−</mo><mi>y</mi><mo>=</mo><mi>x</mi><mo>+</mo><msub><mi>y</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">x-y=x+y_c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<h3 id="4补码加减法运算的溢出问题">4.补码加减法运算的溢出问题</h3>
+<p>补码最多能表示的数的范围为$-2^{n-1}\rightarrow 2^{n-1}-1 $</p>
+<p>超过这个范围的计算结果会出现溢出，一个直观的判断溢出道德方法当然是直接加出来，结果不对当然溢出，更简单的方法是对数字最高有效位进位和符号位进位做异或。</p>
+<table>
+<thead>
+<tr>
+<th>符号位进位</th>
+<th>最高位进位</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>正确</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>溢出</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>溢出</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>正确</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://firemakerwillow.github.io/post/zheng-zhi-zhe-xue-2-he-xin-guan-nian/">
+                  <h3 class="post-title">
+                    【政治哲学 2】核心观念
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>

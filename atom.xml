@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://firemakerwillow.github.io</id>
     <title>工业区的后宅</title>
-    <updated>2021-03-01T11:08:10.996Z</updated>
+    <updated>2021-03-01T13:56:23.657Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://firemakerwillow.github.io"/>
     <link rel="self" href="https://firemakerwillow.github.io/atom.xml"/>
@@ -10,6 +10,70 @@
     <logo>https://firemakerwillow.github.io/images/avatar.png</logo>
     <icon>https://firemakerwillow.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 工业区的后宅</rights>
+    <entry>
+        <title type="html"><![CDATA[补码]]></title>
+        <id>https://firemakerwillow.github.io/post/bu-ma/</id>
+        <link href="https://firemakerwillow.github.io/post/bu-ma/">
+        </link>
+        <updated>2021-03-01T13:56:04.000Z</updated>
+        <content type="html"><![CDATA[<p>补码是对数字的一种编码形式，通过这种编码形式，我们能将减法运算转化为加法运算，非常便捷。</p>
+<h3 id="1-补码的实现">1. 补码的实现</h3>
+<p>补码的最高位表示正负，0为正，1为负</p>
+<p>对于正数，取它的二进制形式。例如 3 可以编码为 011，如果是四位编码就是0011</p>
+<p>对于负数，先取它的绝对值的二进制形式，例如-3的绝对值3二进制形式为011，对每一位取反，得到100，再加一，得到101，这就是-3的编码</p>
+<p>对于0，先按位取反得1111，再加1，得到0，所以0的补码是0</p>
+<h3 id="2补码计算加减法">2.补码计算加减法</h3>
+<p>2.1  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>+</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">3+5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span></p>
+<p>用5位补码计算,为 00011+00101=01000</p>
+<p>2.2  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>3</mn><mo>−</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">-3-5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">5</span></span></span></span></p>
+<p>用5位补码计算，为 11101+11011=11100</p>
+<p>2.2  <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mo>−</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">5-3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">3</span></span></span></span></p>
+<p>用5位补码计算，为00101+11101=00010</p>
+<p>计算均符合结果。</p>
+<h3 id="3补码计算减法的证明">3.补码计算减法的证明</h3>
+<p>根据时钟原理，我们把时钟往前拨4个小时和向后拨8个小时是等价的。</p>
+<p>这里的4+8=12，12就是模长。根据这个原理，我们有x-y=x+m-y,m为模长，</p>
+<p>但模长是不能表示的，就像在钟表中，我们实际上并没有12这个刻度（那个刻度是0，别杠，我说是0就是0），我们不能直接在式子中加一个模长，况且即便能加模长，-y这个本质困难还是没有变。</p>
+<p>所以，我们还需要进行一步操作，这步操作简直绝妙，x+m-y=x+m-1-y+1</p>
+<p>而m-1就是全1的形式，如果是5位编码，这个数就是11111，如果是3位，就是111</p>
+<p>然后就得到了x-y=x+1111...-y+1,而且11111-y恰好就是对y按位取反，这就得到了</p>
+<p>x-y=x+y~+1 y~+1就是补码，这里我们就得到了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>−</mo><mi>y</mi><mo>=</mo><mi>x</mi><mo>+</mo><msub><mi>y</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">x-y=x+y_c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<h3 id="4补码加减法运算的溢出问题">4.补码加减法运算的溢出问题</h3>
+<p>补码最多能表示的数的范围为$-2^{n-1}\rightarrow 2^{n-1}-1 $</p>
+<p>超过这个范围的计算结果会出现溢出，一个直观的判断溢出道德方法当然是直接加出来，结果不对当然溢出，更简单的方法是对数字最高有效位进位和符号位进位做异或。</p>
+<table>
+<thead>
+<tr>
+<th>符号位进位</th>
+<th>最高位进位</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>正确</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>溢出</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>溢出</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>正确</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【政治哲学 2】核心观念]]></title>
         <id>https://firemakerwillow.github.io/post/zheng-zhi-zhe-xue-2-he-xin-guan-nian/</id>
@@ -817,8 +881,8 @@ var4 = var1* 12
 <p>\1. items</p>
 <h4 id="24-task-list">2.4 Task List</h4>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9072090"><label class="task-list-item-label" for="task-item-9072090"> Task1</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8740879"><label class="task-list-item-label" for="task-item-8740879"> Task2</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2782821"><label class="task-list-item-label" for="task-item-2782821"> Task1</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8217836"><label class="task-list-item-label" for="task-item-8217836"> Task2</label></li>
 </ul>
 <p>- [ ] task1</p>
 <h4 id="25-code-blocks">2.5 Code Blocks</h4>
@@ -833,35 +897,6 @@ script()
 <p>```</p>
 <h4 id="26-lines">2.6 Lines</h4>
 <hr>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[从《你好，李焕英》到《妈妈再爱我一次》]]></title>
-        <id>https://firemakerwillow.github.io/post/cong-lesslessni-hao-li-huan-ying-greatergreater-dao-lesslessma-ma-zai-ai-wo-yi-ci-greatergreater/</id>
-        <link href="https://firemakerwillow.github.io/post/cong-lesslessni-hao-li-huan-ying-greatergreater-dao-lesslessma-ma-zai-ai-wo-yi-ci-greatergreater/">
-        </link>
-        <updated>2021-02-18T14:36:33.000Z</updated>
-        <content type="html"><![CDATA[<p>《你好，李焕英》这个片子我非常满意，我心甘情愿地献出了自己的眼泪。父母之爱是人间大爱，这个类型的片子很难不让人产生共鸣。督工对这个影片也非常的满意，为此还专门更新了一期《睡前消息》发表影评。</p>
-<p><a href="https://www.bilibili.com/video/BV1Ev4y1Z7TG">【睡前消息236】生于1981，我带着回忆看“李焕英”</a></p>
-<figure data-type="image" tabindex="1"><img src="https://firemakerwillow.github.io/post-images/1613659089209.png" alt="" loading="lazy"></figure>
-<p>督工主要从电影的真实性上发表看法，他认为时代感是这部影片最显著的优点。这部影片非常逼真地再现了80年代大型厂区的工人生活。集体食堂，能放电影的演出舞台，同时承担篮球和排球的水泥操场，一丝一扣都非常真实，作为一部商业片达到了纪录片的效果。</p>
-<p>而我，已经深深的陶醉在李焕英的状貌上了，这是一种毫无棱角却又亭亭玉立的美感。如果我没看错的话，这应该就是多次和贾玲在春晚上合作的那个喜剧演员，回忆她们俩之前的作品，一般都是贾玲演婆婆或者妈，张小斐演媳妇或者女儿，这次她们俩掉了个儿，这本身就是一件很有趣的事情。</p>
-<p>“李焕英”的演员是东北人，以前提起东北女人，总是一种东北大妞的刻板印象。经历了冰冰，经历了这个影片，这种地图炮式的刻板印象该改改了。</p>
-<figure data-type="image" tabindex="2"><img src="https://firemakerwillow.github.io/post-images/1613659104587.webp" alt="" loading="lazy"></figure>
-<p><em>啊！太好看了！太好看了吧！</em></p>
-<p>我觉得督工从真实性这方面谈论这部影片纯粹是既想求得新颖，又不想多费功夫。真实性完全不是这部影片真正出彩的地方，只是锦上添花而已。真正打动我的，是它的立意——“打我有记忆起，妈妈就是个中年妇女的样子。所以我总忘记妈妈曾经也是个花季少女”，是女儿和母亲闺蜜般的感情，是一心只想给母亲带来欢乐，带来更好的生活，甚至愿意自己不会降生的女儿，是不管女儿多么普通，多么比不过人，都支持她，安慰她，以她为傲的母亲，是母亲弥留之际说“宝啊，你要健健康康，快快乐乐”，女儿撕心裂肺的那句“我不能”。</p>
-<p>女儿离不开妈妈，妈妈离不开女儿，“下辈子我当妈”，“不，下辈子还是我当妈”。这是真正的爱，普通却又难得，易懂却又易忘。这种爱，真正予人力量，真正治愈人心。</p>
-<p>影片催人泪下，却又不过度煽情，贾玲对自己的母亲有着强烈的感情，想要输出很多的情绪和想法，但是能做到克制，将情绪把握的非常合适，这一点非常不容易。</p>
-<p>影片的一些细节也是经得起考究的，比如“冷特”这个戏份很重但最后也没有什么结局的人物。这种人物，我一般称之为“工具人”，这种人物纯粹就是为了推进情节发展而设立的。“冷特”在几处情节的发展上发挥了重要作用，比如帮厂长家儿子追求李焕英。一般这种人物就点到为止就好了，但是贾玲还给他安排了一段感情戏，还用他的母亲的病危再次表达对母亲的愧疚，平衡了电影中段浓郁的喜剧氛围，让观众始终做到笑中有泪，也真算是物尽其用了。</p>
-<figure data-type="image" tabindex="3"><img src="https://firemakerwillow.github.io/post-images/1613659113441.webp" alt="" loading="lazy"></figure>
-<p><em>老工具人了</em></p>
-<p>电影结束后，母亲回忆起她们时代最为火爆的亲情类电影《妈妈再爱我一次》，这部九十年代的电影在当时血洗了1个亿的票房，共计约2亿人观看，这个火爆程度远远超过了我听说过的所有影片，当然也远远超过了《你好，李焕英》这部影片。据说当时从电影院出来没有一个人不是哭着的。所以回家之后我和母亲一起看了一遍这个影片。</p>
-<figure data-type="image" tabindex="4"><img src="https://firemakerwillow.github.io/post-images/1613659124750.webp" alt="" loading="lazy"></figure>
-<p>我对这个影片的评价很低，这个影片配不上它在豆瓣上8.3分的评分，它的情节在今天看来已经成为俗套，出身低微的母亲和出身富豪的父亲相爱，却因为家庭的差距不能成婚，不得以母亲带孕离开，历尽辛苦抚养孩子长大，与她人成婚的父亲却不能再生育，这个孩子将是富豪家族唯一的血脉。于是富豪家族软硬结合想要夺走孩子，母亲为了孩子的前途考虑最终同意送走孩子，但孩子和母亲彼此思念，生不如死，孩子屡次离家出走去找母亲，母亲忍痛教训孩子让他不要再回来，不然她就要躲起来再也不见他。母亲为爱折磨，失心成疯，流离不知所终。而孩子学成归来，最后成为一家精神病院的新院长，在医院找到了自己的母亲，两者终得相认，终得团圆。</p>
-<p>整个影片情节过于孱弱，只好用煽情来填充内容。大段大段的哭戏可能在当时能起到煽情的作用，但在我这里只能引起生理不适。仔细想想的话，导演还是做出了一些技法上的尝试，甚至有向现代工业电影发展的倾向。比如知道将父亲结婚和母亲的痛苦生产剪在一起，虽然清代的红楼梦就知道这么写了；比如注重情感上的起伏，将母子在一起的快乐和母子分离的痛苦相间，让观众在对比中感受感情；比如知道运用“世上只有妈妈好”和“母亲买给孩子的熊猫”这样的道具来推动情节，虽然运用的非常生硬；比如注意情节高潮的设置，知道在影片的30min左右设置一个小高潮。</p>
-<p>尽管如此，这部影片是不过关的，这说明了红极一时的文化产品不一定就是好的文化产品，好的文化产品应该能经得起时间的考验。</p>
-<p>这部影片反映了一些时代的印记。这个影片说明了在九十年代，台湾已经具备了相当规模的单亲家庭，虽然单亲妈妈仍要面对非议，但已经成为一个社会现象，可以被自然吸纳为文化产品的题材。这个影片还说明了当时部分台湾单亲家庭依靠母亲自身的劳动已经可以让自己和孩子获得美满幸福的生活，有条件让孩子接受教育。妇女参加劳动，这是工业时代的典型特征，但对应的，落后的思想依然在台湾保留，比如孩子得病之后，母亲不是留在孩子身边陪护，而是叩长头前往寺庙；比如没有儿子，注意影片中就是儿子，就算绝后，是不能被家族接受的事情。</p>
-<p>影片中反映的爱我也不能接受，爱应该给人力量，而不是让人痛苦，如果爱让人如此痛苦，还是不要爱好了。</p>
 ]]></content>
     </entry>
 </feed>
