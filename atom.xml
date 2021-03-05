@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://firemakerwillow.github.io</id>
     <title>工业区的后宅</title>
-    <updated>2021-03-02T05:30:23.976Z</updated>
+    <updated>2021-03-05T05:46:24.024Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://firemakerwillow.github.io"/>
     <link rel="self" href="https://firemakerwillow.github.io/atom.xml"/>
@@ -10,6 +10,141 @@
     <logo>https://firemakerwillow.github.io/images/avatar.png</logo>
     <icon>https://firemakerwillow.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 工业区的后宅</rights>
+    <entry>
+        <title type="html"><![CDATA[卡诺图和QM算法（非教程向）]]></title>
+        <id>https://firemakerwillow.github.io/post/qia-nuo-tu-he-qm-suan-fa-fei-jiao-cheng-xiang/</id>
+        <link href="https://firemakerwillow.github.io/post/qia-nuo-tu-he-qm-suan-fa-fei-jiao-cheng-xiang/">
+        </link>
+        <updated>2021-03-05T05:44:29.000Z</updated>
+        <content type="html"><![CDATA[<p>卡诺图化简法与Q-M化简法，我想了一周时间，还是没有比教材更好，更精简的讲法，所有的该奶奶都是必要的，所有的步骤都是必要的，环环相扣，不可或缺，既然如此，不如直接看教材好了，这里权作为笔记。</p>
+<h2 id="1-布尔函数的化简">1. 布尔函数的化简</h2>
+<p>布尔代数可以用于描述组合逻辑的函数关系。组合逻辑是指一个无记忆的系统，我们向这个系统中输入一些值，立即可以得到一些输出。比如说<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>p</mi><mo separator="true">⋅</mo><mi>s</mi><mo>+</mo><mi>q</mi><mo separator="true">⋅</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">y=p·s+q·s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">s</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">s</span></span></span></span>, 我们向系统中输入p, q, s 就可以得到输出y。</p>
+<p>上面就是一个布尔函数的表达式，这个表达式是最简的吗？并不是，它可以变成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mo>(</mo><mi>p</mi><mo>+</mo><mi>q</mi><mo>)</mo><mo separator="true">⋅</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">y=(p+q)·s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">)</span><span class="mpunct">⋅</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">s</span></span></span></span> 这个式子只需要两步计算，而上面的式子需要3步。</p>
+<p>由于我们的组合逻辑电路是用晶体管实现的，我们当然希望计算步骤越少越好，越少，我们需要的晶体管就越少，电路的性能就会更优越。</p>
+<p>这时我们就需要一个程序性的，可以解决所有组合逻辑电路的布尔函数化简方法。</p>
+<h2 id="2-卡诺图法和q-m法">2. 卡诺图法和Q-M法</h2>
+<p>这是两个化简的方法，我们将通过一个例子来说明这两种方法。</p>
+<h3 id="21-卡诺图法">2.1 卡诺图法</h3>
+<table>
+<thead>
+<tr>
+<th>CD\AB</th>
+<th>00</th>
+<th>01</th>
+<th>11</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>01</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>2.1.1 卡诺图法首先要列出一个真值表，这里列出了四变量真值表的列法</p>
+<p>如果是三变量，是以下形式</p>
+<table>
+<thead>
+<tr>
+<th>C\AB</th>
+<th>00</th>
+<th>01</th>
+<th>11</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>如果是二变量</p>
+<table>
+<thead>
+<tr>
+<th>B\A</th>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>四变量以上卡诺图是可以解决的，但不建议使用，最好使用后面要介绍的Q-M法</p>
+<p>我们还回到4变量的例子。</p>
+<p>卡诺图的列法中唯一需要注意的点是AB 或CD值的连续变化，即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>00</mn><mo>→</mo><mn>01</mn><mo>→</mo><mn>11</mn><mo>→</mo><mn>10</mn></mrow><annotation encoding="application/x-tex">00\rightarrow 01\rightarrow11\rightarrow10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span></span></span></span> 相邻两值之间仅有一位发生变化。</p>
+<p>2.1.2 接下来我们要根据卡诺图写表达式，要用最大的矩形把所有的1项包围起来。</p>
+<p>目标就是用最大最少的方框把所有的1都括起来，这时候，就有一些框是必不可少的，我们优先先把他们括起来，其他的再想办法，通过这种方法我们就能实现布尔函数的化简</p>
+<h3 id="22-qm算法">2.2 QM算法</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo separator="true">,</mo><mi>C</mi><mo separator="true">,</mo><mi>D</mi><mo>)</mo><mo>=</mo><mo>∑</mo><mi>m</mi><mo>(</mo><mn>4</mn><mo separator="true">,</mo><mn>8</mn><mo separator="true">,</mo><mn>10</mn><mo separator="true">,</mo><mn>11</mn><mo separator="true">,</mo><mn>12</mn><mo separator="true">,</mo><mn>15</mn><mo>)</mo><mo>+</mo><mi>d</mi><mo>(</mo><mn>9</mn><mo separator="true">,</mo><mn>14</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">F(A,B,C,D)=\sum m(4,8,10,11,12,15)+d(9,14)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.00001em;vertical-align:-0.25001em;"></span><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">5</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mopen">(</span><span class="mord">9</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mord">4</span><span class="mclose">)</span></span></span></span> 其中d<sub>i</sub>表示无关项</p>
+<ol>
+<li>列出所有使得输出为1的最小项（此处把无关项也包含其中），将其序号转成二进制，根据二进制写法中1的个数分类。按升序填入表格中，</li>
+</ol>
+<p>![截屏2021-03-05 13.30.19](/Users/changhao/Desktop/permanent/myPage/images/截屏2021-03-05 13.30.19.png)</p>
+<ol start="2">
+<li>
+<p>合并最小项，对所有相邻的组中最小项进行搜索、对比，若某两个最小项之间只有一个数位不对，则可以将这两个最小项合并，并用短横“-”代替这个数位。产生size2</p>
+</li>
+<li>
+<p>继续合并，产生size4，直到无法产生更大的size为止</p>
+</li>
+<li>
+<p>寻找最小覆盖，可以通过最小项为横坐标、本原蕴含项为列坐标列一个表格，发现只有4个最小项个字只被一个本原蕴含项蕴含，因此这三个蕴含项就是本原蕴含项，可以得到最终的化简结果=m(4,12)+m(8,9,10,11)+(10,11,14,15)</p>
+</li>
+</ol>
+<p>![截屏2021-03-05 13.37.41](/Users/changhao/Desktop/permanent/myPage/images/截屏2021-03-05 13.37.41.png)</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo separator="true">,</mo><mi>C</mi><mo separator="true">,</mo><mi>D</mi><mo>)</mo><mo>=</mo><mi>A</mi><mi>C</mi><mo>+</mo><mi>C</mi><mover accent="true"><mi>D</mi><mo stretchy="true">‾</mo></mover><mo>+</mo><mover accent="true"><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy="true">‾</mo></mover><mi>D</mi></mrow><annotation encoding="application/x-tex">F(A,B,C,D)=AC+C\overline{D}+\overline{AB}D</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.9666600000000001em;vertical-align:-0.08333em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8833300000000001em;vertical-align:0em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span></span></span></span></p>
+<p>卡诺图简便但不精准，且无法应用于高维</p>
+<p>QM算法精准不简便，但是可以编程实现啊，比卡诺图要高。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【概率论 2】贝叶斯定理]]></title>
         <id>https://firemakerwillow.github.io/post/gai-lu-lun-2-bei-xie-si-ding-li/</id>
@@ -589,262 +724,6 @@
 <p>社会化生活实现了上述目标，人类以国家和社会的形式组织起来。有组织就必然会有层级，有层级就必然有high-rank。high-rank本身没有问题，问题在于谁来组成high-rank，谁来组成底层。底层应该有怎样的生活。</p>
 <p>社会化是通过让渡权力实现的，但让渡权力是一个危险的举动，我们可以选择把钱交与银行管理，我们获得了利息，银行得到了收入，皆大欢喜，但只要我们不愿意，我们可以随时把钱取回来，但权力不是这样。我们生活在社会里，不能收回自己让渡的权力，权力一旦让渡，就不可收回，而权力的力量又太大，随时有约束个体，伤害个体的可能。如何避免这种伤害，是一个问题。</p>
 <p>综上的这些问题都是政治哲学根本问题的反映，所谓政治哲学的根本问题，是公共权力和公民权利的关系问题。本质上讲，我们把政治哲学看作一种寻找限制政治权力的手段。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[python c++ 对比教程（一）]]></title>
-        <id>https://firemakerwillow.github.io/post/python-c-dui-bi-jiao-cheng/</id>
-        <link href="https://firemakerwillow.github.io/post/python-c-dui-bi-jiao-cheng/">
-        </link>
-        <updated>2021-02-21T13:25:08.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="前言">前言</h1>
-<p>这是博主的第一篇“技术”博客，浅显直白，试水之作，还望海涵。</p>
-<p>本教程提供学习python的一种思路，对比c++教程，看python的异同之处。如果先前已经学习过c++，那么这将是一种学习python的很自然的思路。</p>
-<h1 id="一-hello-world">一. hello world</h1>
-<pre><code class="language-c++"># include &lt;iostream&gt;
-using namespace std;
-int main()
-{
-  cout&lt;&lt;&quot;hello world&quot;;
-  return 0;
-}
-</code></pre>
-<pre><code class="language-python">print('hello world')
-</code></pre>
-<p>可以看到python的“hello world”程序较c++非常简单。这是因为c++是一门<mark>编译型语言</mark>，需要非常完整的程序结构，有主程序。而python是一门<mark>解释型语言</mark>，程序从上到下一句一句执行，不需要完整的程序结构。</p>
-<p>python的解释性使它不仅可以通过程序运行，还可以交互式运行，在terminal里输入python3，如果下载了ipython3，也可以输入ipython3，进入交互式使用界面。</p>
-<p>这里解释一下为什么是python3 ，因为python3 是python的全新版本，python创造者为了它的完美放弃了向下兼容，也就是说，python 中的部分程序是不能在最新的python3中运行的。</p>
-<h1 id="二-注释">二. 注释</h1>
-<pre><code class="language-c++">// 这是一个行注释
-/*这是一个块注释
-这是一个块注释
-这是一个块注释*/
-</code></pre>
-<pre><code class="language-python"># 这是一个行注释
-'''
-这是一个块注释
-这是一个块注释
-这是一个块注释
-'''
-</code></pre>
-<p>注释容易混淆</p>
-<h1 id="三-基本数据类型">三 .基本数据类型</h1>
-<pre><code class="language-c++">#include&lt;iostream&gt;
-int main()
-{
-  int num = 0;
-  float numpoint = 1.2;
-  double numlongpoint = 6.9;
-  char character = 'a';
-  bool tof = true;
-  
-}
-</code></pre>
-<pre><code class="language-python">num = 0
-numpoint = 1.2
-character = 'a'
-tof = True
-</code></pre>
-<p>python 不需要指定数据类型。C++和python的变量机制似乎不同（此处我的理解很模糊）：c++是首先根据变量类型分配空间，然后在空间内赋值，python是首先有一个值，然后给这个值绑上一个标签。</p>
-<h1 id="四-高级数据类型">四. 高级数据类型</h1>
-<pre><code class="language-c++"># include&lt;iostream&gt;
-int main()
-{
-  // 枚举
-  enum color_set1 {red,blue,white,black};
-  // 枚举常量 red=0 blue=1  
-  color_set1 color1;
-  color1 = red;
-  color_set1 color2 = blue;
-}
-</code></pre>
-<p>枚举类型主要作用是提高代码可读性。</p>
-<pre><code class="language-c++"># include &lt;iostream&gt;
-int main()
-{
-  // 数组
-  int numset1[20];
-  char charaset2[30];
-  // 初始化数组
-  double balance[] = {1000.0, 2.0, 3.4, 7.0, 50.0};
-  char str1[] = &quot;hbibnjnl&quot;;
-}
-</code></pre>
-<p>数组必须在定义时确定大小</p>
-<pre><code class="language-c++"># include &lt;iostream&gt;
-# include &lt;cstring&gt;
-# include &lt;string&gt;
-using namespace std;
-int main()
-{
-  // cstring字符串
-  char str1[13] = &quot;runoob&quot;;// 共7位，最后一位为'\0'
-  char str2[13] = &quot;google&quot;;
-  char str3[13];
-  int  len ;
-  
-   // 复制 str1 到 str3
-  strcpy( str3, str1);
-  cout &lt;&lt; &quot;strcpy( str3, str1) : &quot; &lt;&lt; str3 &lt;&lt; endl;
- 
-   // 连接 str1 和 str2
-  strcat( str1, str2);
-  cout &lt;&lt; &quot;strcat( str1, str2): &quot; &lt;&lt; str1 &lt;&lt; endl;
- 
-   // 连接后，str1 的总长度
-  len = strlen(str1);
-  cout &lt;&lt; &quot;strlen(str1) : &quot; &lt;&lt; len &lt;&lt; endl;
- 
-  // string 字符串
-  string str1 = &quot;runoob&quot;;
-  string str2 = &quot;google&quot;;
-  string str3;
-  int  len ;
- 
-  // 复制 str1 到 str3
-  str3 = str1;
-  cout &lt;&lt; &quot;str3 : &quot; &lt;&lt; str3 &lt;&lt; endl;
- 
-   // 连接 str1 和 str2
-  str3 = str1 + str2;
-  cout &lt;&lt; &quot;str1 + str2 : &quot; &lt;&lt; str3 &lt;&lt; endl;
- 
-   // 连接后，str3 的总长度
-  len = str3.size();
-  cout &lt;&lt; &quot;str3.size() :  &quot; &lt;&lt; len &lt;&lt; endl;
- 
-  
-  return 0;
-}
-
-
-</code></pre>
-<p>字符串有两种，cstring的字符串保留了更多的c的味道，string字符串更符合面向对象的设计思想，需要引用不同的库</p>
-<pre><code class="language-c++"># include &lt;iostream&gt;
-int main()
-{
-  //指针
- 	char * str1;
-  str1 = new char [] = &quot;hello world&quot;;
-  delete str1;
-  int * num1;
-  int num2 = 3;
-  num1 = &amp; num2; //在指针表量中存储 num2 的地址
- 	std::cout &lt;&lt; num1 &lt;&lt;endl; //输出 num2 的地址
-  std::cout &lt;&lt; *num1 &lt;&lt; endl; //输出num2的值 
-  num1 = NULL; // 设置空指针
-}
-</code></pre>
-<pre><code class="language-python"># 元组
-tuple1 = (1,4,1,&quot;2345&quot;,True)
-print(tuple1[2])
-a = tuple1.index(1)
-b = tuple1.count(1)
-</code></pre>
-<p>元组的特性是不可修改，常常用于函数传递多个参数使用</p>
-<pre><code class="language-python"># 列表
-list1 = ['red','blue','yelloow','white','black']
-print(list1)
-print (list1[-1])
-print (list1[0])
-'''
-列表支持的操作
-append 增加，在列表末尾加元素
-
-count 统计某一元素出现次数
-
-insert，插入元素
-
-reverse，列表反向
-
-clear，盲猜清除
-
-extend，在列表末尾一次性追加一个列表的值
-
-pop,移除队尾元素，并返回该元素的值
-
-sort 排序
-
-copy 暂时不清楚它的作用
-
-index，找到某值对应的第一个索引位置
-
-remove；移除第一个该元素
-'''
-
-</code></pre>
-<p>列表可以用不同类型的值，但一般都会用相同类型的值</p>
-<pre><code class="language-python"># 字典 
-# 由键值对构成，:前为键，:后为值
-# 键必须是数字，字符串，或元组
-dic = {
-  'num1' : 1
-  'num2' : 2
-  'str' :&quot;snkckjk&quot;
-  'tuple1' : (12,34)
-  'list1' : [12,23,45]
-}
-print(dic['num1'])
-# dict 的内置方法
-dic.items() #返回一个字典的键值对
-
-dic.keys() #返回一个字典的键
-
-dic.values() #返回一个字典的所有值,类型为dict_values 非常奇怪
-
-dic.pop(key) #删除给定键key所对应的值
-
-dic.get(key,default=None) # 返回指定键的值，如果值不在就返回default
-
-dic.setdefault(key,default=None) #返回键值，如果键不存在，就创建key，值为default
-
-dic.update(dict2) #将dict2的值更新在dic里，有键则更新，无键则增加
-
-
- 
-</code></pre>
-<pre><code class="language-python"># 字符串
-var1 = 'hello world'
-var2 = 'hello python'
-
-# 字符串索引 支持从前向后和从后向前
-var1[2]
-var2[-2]
-
-# 字符串操作
-var3 = var1 + var2
-var4 = var1* 12
-'he ' in var1   # 判断
-'wo' not in var2
-
-# 字符串方法
-
-</code></pre>
-<p>字符串方法太多，有需求请去查表，大致可分为以下几类</p>
-<p>分类</p>
-<ol>
-<li>
-<p>包含is，是否判断</p>
-</li>
-<li>
-<p>查找和判断，涉及两个字符</p>
-</li>
-<li>
-<p>大小写转换，</p>
-</li>
-<li>
-<p>涉及对齐，可以居中对齐，可以左对齐，右对齐</p>
-</li>
-<li>
-<p>去除空白字符，和对齐配合使用</p>
-</li>
-<li>
-<p>字符串的拆分与拼接</p>
-</li>
-</ol>
-<p><a href="https://www.runoob.com/python/python-strings.html">菜鸟教程｜python3 字符串</a></p>
-<p>字典和列表常常同时使用，在字典中存储一个物体的全部信息，然后把各个物体的所有信息存储在一个列表内。<br>
-总的来看，python 中没有指针，字符串相较于c++封装的更像一个对象，而元组，列表，字典加起来吊打数组，比数组的功能强大的多。</p>
 ]]></content>
     </entry>
 </feed>
