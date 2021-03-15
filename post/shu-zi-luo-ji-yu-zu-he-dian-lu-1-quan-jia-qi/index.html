@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>【数字逻辑与组合电路1】全加器 | 工业区的后宅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://firemakerwillow.github.io/favicon.ico?v=1615811295430">
+<link rel="stylesheet" href="https://firemakerwillow.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="加法器的实现
+_加法器我们当然可以通过列出布尔函数，卡诺图化简，然后对应门电路的传统方法设计出来，但我们也可以通过下面的步骤实现对加法器更深层次的理解。作为一个非常非常基本的电路，增加对它的理解是一件好事。
+虽说是第一篇教程，但之前其实已经..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://firemakerwillow.github.io">
+        <img src="https://firemakerwillow.github.io/images/avatar.png?v=1615811295430" class="site-logo">
+        <h1 class="site-title">工业区的后宅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一代人终将老去，但总有人永远年轻
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://firemakerwillow.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">【数字逻辑与组合电路1】全加器</h2>
+            <div class="post-date">2021-03-15</div>
+            
+            <div class="post-content" v-pre>
+              <p>加法器的实现</p>
+<p>_加法器我们当然可以通过列出布尔函数，卡诺图化简，然后对应门电路的传统方法设计出来，但我们也可以通过下面的步骤实现对加法器更深层次的理解。作为一个非常非常基本的电路，增加对它的理解是一件好事。</p>
+<p>虽说是第一篇教程，但之前其实已经发过两篇了，分别是布尔代数入门和布尔函数的化简。<br>
+_</p>
+<h2 id="1从异或运算开始">1.从异或运算开始</h2>
+<table>
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th>A⊕B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>异或运算已经表现出一些加法的基本特征，0+1=1，0+0=0，1+1考虑到进位，输出了1.</p>
+<p>异或运算用与或非门表示为<span class='katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \or at position 17: …\lnot A\land B)\̲o̲r̲(A\land \lnot B…'>(\lnot A\land B)\or(A\land \lnot B)</span>，注意中间的符号是or，这是决定它加法性质的部分。</p>
+<p>异或运算实现需要16个晶体管。</p>
+<h2 id="2半加器">2.半加器</h2>
+<p>![截屏2021-03-15 20.05.43](/Users/changhao/Desktop/permanent/myPage/images/截屏2021-03-15 20.05.43.png)</p>
+<p>这是考虑到进位需求后的设计，C是进位项，只有A,B同时为1时才会进位，非常的合适，但是如果要真正计算加法，我们还需要考虑一点，那就是我们不仅会进位到上一位，下一位的进位会加上来。</p>
+<h3 id="3全加器">3.全加器</h3>
+<p>我们可以用两个半加器构成一个全加器。非常的奇妙。</p>
+<p>![截屏2021-03-15 20.19.55](/Users/changhao/Desktop/permanent/myPage/images/截屏2021-03-15 20.19.55.png)</p>
+<p>A,B首先通入了一个半加器，结果与Cin做异或得到S，这个合理吗？非常合理，因为这相当于A,B,C三者做异或，三个作为加法元素本身就没什么区别，现在待遇相同，所以非常合理。</p>
+<p>但是进位为什么要做一次或运算呢？这个问题需要仔细考虑一下。</p>
+<p>Cout为1，由于是或运算，相当于是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∧</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A\land B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span>为1，或者<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>∧</mo><mi>C</mi><mi>i</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">S\land Cin</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span></span></span></span>为1.</p>
+<p>而S为1，相当于是A和B中只有一个为1.所以实际上是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∧</mo><mi>B</mi><mo separator="true">,</mo><mi>A</mi><mo>∧</mo><mi>C</mi><mi>i</mi><mi>n</mi><mo separator="true">,</mo><mi>B</mi><mo>∧</mo><mi>C</mi><mi>i</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">A\land B,A\land Cin ,B\land Cin</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∧</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span></span></span></span>中至少一个为1，这时候我们能说该进位了，也就是说，三个书中至少有两个1，这时候该进位了。非常的合理。</p>
+<p>很好记忆，两个半加器级联，加一个或运算得到全加器。</p>
+<p>当然，还有一个问题是，这样得到的全加器是最简的全加器吗？实际上是的，可以用卡诺图验证，在这里就不做了。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://firemakerwillow.github.io/post/ru-he-cheng-wei-yi-ming-you-mo-you-yang-de-cheng-xu-yuan/">
+                  <h3 class="post-title">
+                    如何成为一名有模有样的程序员
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
