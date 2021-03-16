@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>组合逻辑技术名词 | 工业区的后宅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://firemakerwillow.github.io/favicon.ico?v=1615908519355">
+<link rel="stylesheet" href="https://firemakerwillow.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="在阅读中出现一些英文代表的技术名词是一件令人恼火的事情，此文对这些名词做一些解释
+微处理器：微处理器是由一片或少数几片大规模集成电路组成的中央处理器。这些电路执行控制部件和算术逻辑部件的功能。这是一类通用元件
+RAM：随机访问存储器，这是另..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://firemakerwillow.github.io">
+        <img src="https://firemakerwillow.github.io/images/avatar.png?v=1615908519355" class="site-logo">
+        <h1 class="site-title">工业区的后宅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一代人终将老去，但总有人永远年轻
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://firemakerwillow.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">组合逻辑技术名词</h2>
+            <div class="post-date">2021-03-16</div>
+            
+            <div class="post-content" v-pre>
+              <p><em>在阅读中出现一些英文代表的技术名词是一件令人恼火的事情，此文对这些名词做一些解释</em></p>
+<p><strong>微处理器</strong>：微处理器是由一片或少数几片大规模集成电路组成的中央处理器。这些电路执行控制部件和算术逻辑部件的功能。这是一类通用元件</p>
+<p><strong>RAM</strong>：随机访问存储器，这是另一种通用原件，可用在各种不同的应用中存储大量数据。</p>
+<p><strong>IC</strong>：集成电路</p>
+<p><strong>SSI</strong>：小规模集成电路，包含10个或更少逻辑门的元件，典型代表是加法器和译码器</p>
+<p><strong>MSI</strong>：中规模集成电路，包含10-100个逻辑门的元件，典型代表是74系列，经典。</p>
+<p><strong>ROM</strong>：只读存储器，是0和1的固定阵列，它的地址对应真值表的各种输入组合，用来对阵列进行索引。一个输入组合对应的索引或ROM位置中的内容，即为该输入下的ROM输出，构成真值表的一项，一次ROM是一个可配置的大规模查找表，用于保存特定真值表中的内容。</p>
+<p>key: 储存器，根据索引找输出，记录真值表。</p>
+<p><strong>PROM</strong>：可重新编写的ROM，它是可编写的，但也只能编写一次。</p>
+<p><strong>EPROM</strong>：可擦除PROM，可以擦除ROM中的数据，可以重新编写。</p>
+<p><strong>EEROM</strong>：电可擦除PROM，可以通过电来擦除，不再需要把芯片从电路中拿下进行编程。</p>
+<p><strong>PLA</strong>：可编程门阵列技术的一种，允许设计者对与门和或门进行编程</p>
+<p><strong>PAL</strong>：只允许对与门进行编程，由于自由度小，实现速度会更快，但是一些功能会受限。PLA和PAL可以实现10w个等效门的函数的期间</p>
+<p><strong>ASIC</strong>：专用集成电路，和通用集成电路相对。</p>
+<p><strong>ASIC门阵列</strong>：一种广泛使用的ASIC技术，通过在更通用的片上可编程连线，可以实现几百万的逻辑门组成的门阵列。但由于一些原因，它只适合要求量产的设计，不是一种快速建立设计原型的技术，需要的周期很长。</p>
+<p><strong>standard cell</strong>：标准单元，另一种常用的ASIC技术，可以提供更灵活的逻辑构建模块，这些模块的复杂度和可以找到的MSI元件类似（10-100个逻辑门）。但是不同之处在于，我们不需要去连接这些模块，它们会被集成到电路板上。由于基本期间都被预先制造，只有最后的互联是灵活的，所以设计需要更长的时间。</p>
+<p><strong>FPGA</strong>：现场可编程门阵列。融合了门阵列结构的密度优势和PLA/PAL的快速编程能力，由基本逻辑模块构成，这点同于standard cell，但是是现场可编程的，编程只需要几秒钟的时间（虽然不知道为什么但感觉很厉害的样子），因此它成了快速建立原型的技术。</p>
+<p>有一些FPGA是可以重编程的（竟然还可以不能重复编程？！），我确实觉得不可思议，但是了解到它们的编程方式是通过熔丝，你就会明白硬件真的不是一件容易的事情。</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://firemakerwillow.github.io/post/ji-ban-shi-shi-me-yi-si-a/">
+                  <h3 class="post-title">
+                    羁绊是什么意思啊
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
